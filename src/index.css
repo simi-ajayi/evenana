@@ -1,0 +1,48 @@
+@import 'tailwindcss';
+@custom-variant dark (&:where(.dark, .dark *));
+
+html {
+  /* Reduce typography scale (rem-based classes, including Outlet content, will follow). */
+  font-size: 13px;
+}
+
+:root {
+  --app-bg: #08261E;
+  --app-surface: #f6f5f4;
+  --app-surface-strong: #ede9e2;
+  --app-text: #1f1d19;
+  --app-muted: #60594e;
+  --app-border: #d8d5cf;
+  --app-primary: #07261e;
+  --app-primary-contrast: #f6f5f4;
+  --app-secondary: #9d7a56;
+  --app-accent: #15382f;
+}
+
+:root.dark {
+  --app-bg: #161411;
+  --app-surface: #25211c;
+  --app-surface-strong: #2f2a24;
+  --app-text: #f6f5f4;
+  --app-muted: #d8d5cf;
+  --app-border: #60594e;
+  --app-primary: #d4ba95;
+  --app-primary-contrast: #1f1d19;
+  --app-secondary: #b08d65;
+  --app-accent: #8dad9a;
+}
+
+@theme inline {
+  --font-body: gt-america, sans-serif;
+  --font-display: ivyora-display, serif;
+  --color-bg: var(--app-bg);
+  --color-surface: var(--app-surface);
+  --color-surface-strong: var(--app-surface-strong);
+  --color-text: var(--app-text);
+  --color-muted: var(--app-muted);
+  --color-border: var(--app-border);
+  --color-primary: var(--app-primary);
+  --color-primary-contrast: var(--app-primary-contrast);
+  --color-secondary: var(--app-secondary);
+  --color-accent: var(--app-accent);
+}

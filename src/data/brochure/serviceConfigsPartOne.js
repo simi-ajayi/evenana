@@ -1,0 +1,58 @@
+import { brochureImages } from './serviceImages'
+
+export const serviceConfigsPartOne = [
+  {
+    slug: 'facials',
+    title: 'Facial Treatments',
+    navLabel: 'Facials',
+    menuHeading: 'FACIAL TREATMENT MENU',
+    aftercareHeading: 'FACIAL AFTERCARE',
+    nextHeading: 'MICRONEEDLING MENU',
+    image: brochureImages.categories.facials,
+  },
+  {
+    slug: 'microneedling',
+    title: 'Microneedling',
+    navLabel: 'Microneedling',
+    menuHeading: 'MICRONEEDLING MENU',
+    aftercareHeading: 'MICRONEEDLING AFTERCARE',
+    nextHeading: 'CHEMICAL PEELS MENU',
+    image: brochureImages.categories.microneedling,
+  },
+  {
+    slug: 'chemical-peels',
+    title: 'Chemical Peels',
+    navLabel: 'Chemical Peels',
+    menuHeading: 'CHEMICAL PEELS MENU',
+    aftercareHeading: 'CHEMICAL PEEL AFTERCARE',
+    nextHeading: 'LASER HAIR REDUCTION MENU',
+    image: brochureImages.categories['chemical-peels'],
+  },
+  {
+    slug: 'laser-hair-reduction',
+    title: 'Laser Hair Reduction',
+    navLabel: 'Laser Hair',
+    menuHeading: 'LASER HAIR REDUCTION MENU',
+    aftercareHeading: 'LASER HAIR REDUCTION AFTERCARE',
+    nextHeading: 'ELECTROCAUTERY TREATMENT MENU',
+    image: brochureImages.categories['laser-hair-reduction'],
+  },
+  {
+    slug: 'electrocautery',
+    title: 'Electrocautery',
+    navLabel: 'Electrocautery',
+    menuHeading: 'ELECTROCAUTERY TREATMENT MENU',
+    aftercareHeading: 'ELECTROCAUTERY AFTERCARE',
+    nextHeading: 'IV THERAPY MENU',
+    image: brochureImages.categories.electrocautery,
+  },
+  {
+    slug: 'iv-therapy',
+    title: 'IV Therapy',
+    navLabel: 'IV Therapy',
+    menuHeading: 'IV THERAPY MENU',
+    aftercareHeading: 'IV THERAPY AFTERCARE',
+    nextHeading: 'O-SHOT (INTIMATE WELLNESS THERAPY)',
+    image: brochureImages.categories['iv-therapy'],
+  },
+]
