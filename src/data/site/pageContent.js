@@ -6,7 +6,7 @@ export const pageContent = {
       label: 'Spa at EVENANA',
       title: 'A sanctuary shaped by nature and modern thinking.',
       description:
-        'Discover an immersive spa destination , where treatments, rituals, and wellness spaces are curated for restorative luxury.',
+        'Discover an immersive spa destination , where treatments, routines, and wellness spaces are curated for restorative luxury.',
       image: brochureImages.hero,
       primaryCta: {
         label: 'Explore treatments',
@@ -21,7 +21,7 @@ export const pageContent = {
       eyebrow: 'A space for you',
       title: 'Welcome to our sanctuary',
       body:
-        'From precision facials to full-body rituals, every moment is designed for comfort, confidence, and visible results. This digital experience mirrors a luxury destination journey with dedicated routes for your goals.',
+        'From precision facials to full-body routines, every moment is designed for comfort, confidence, and visible results. This digital experience mirrors a luxury destination journey with dedicated routes for your goals.',
       image: brochureImages.intro,
     },
     sanctuaryCards: [
@@ -47,7 +47,7 @@ export const pageContent = {
       },
       {
         title: 'Day spa',
-        description: 'Book rejuvenating day experiences with rituals and reset journeys.',
+        description: 'Book rejuvenating day experiences with routines and reset journeys.',
         path: '/day-spa',
         image: brochureImages.categories['body-treatments-hammam'],
       },
@@ -82,7 +82,7 @@ export const pageContent = {
       label: 'Treatments',
       title: 'Personalised treatment collections for face and body.',
       description:
-        'Browse the complete brochure-led menu across facials, advanced aesthetics, body rituals, and recovery therapies.',
+        'Browse the complete brochure-led menu across facials, advanced aesthetics, body routines, and recovery therapies.',
       image: brochureImages.categories.facials,
     },
     lead:
@@ -97,7 +97,7 @@ export const pageContent = {
       image: brochureImages.categories['body-treatments-hammam'],
     },
     highlights: [
-      'Arrival rituals and pre-treatment settling time',
+      'Arrival routines and pre-treatment settling time',
       'Custom treatment pairings based on your goals',
       'Hydration, recovery, and post-treatment relaxation areas',
     ],
@@ -106,7 +106,7 @@ export const pageContent = {
         eyebrow: 'Journey design',
         title: 'Build your day around what your body needs most.',
         body:
-          'Whether you prefer focused recovery or full rejuvenation, your day spa route can combine hammam rituals, massage, and skin therapies into one seamless experience.',
+          'Whether you prefer focused recovery or full rejuvenation, your day spa route can combine hammam routines, massage, and skin therapies into one seamless experience.',
         image: brochureImages.sanctuary[0],
       },
       {

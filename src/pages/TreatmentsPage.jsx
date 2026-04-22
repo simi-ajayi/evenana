@@ -32,7 +32,7 @@ export function TreatmentsPage() {
       <div className="mx-auto w-full max-w-[1080px] px-4 md:px-6 lg:px-0">
         <FadeIn
           as="section"
-          className="space-y-5 bg-surface py-3 text-center md:py-6"
+          className="space-y-5 bg-surface py-3 mb-20 text-center md:py-6"
           delay={0.06}
           duration={0.4}
           triggerOnScroll={false}

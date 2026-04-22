@@ -49,7 +49,7 @@ export function ServicePage() {
         <img src={service.image} alt={service.title} className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/20" />
 
-        <div className="relative z-10 mx-auto flex min-h-[inherit] w-full max-w-[1440px] items-end px-4 py-12 md:px-8 md:py-16">
+        <div className="relative z-10 mx-auto flex min-h-[inherit] w-full mt-32 max-w-[1440px] items-end px-4 py-12 md:px-8 md:py-16">
           <div className="space-y-3">
             <p className="font-body text-[1.2rem] uppercase tracking-[0.06rem] text-white/85">
               {service.menuHeading}

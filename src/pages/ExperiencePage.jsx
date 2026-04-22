@@ -4,6 +4,7 @@ import { ErrorState, LoadingState } from '../components/site/ContentState'
 import { PageHero } from '../components/site/PageHero'
 import { usePageContent } from '../hooks/usePageContent'
 import { FadeIn } from '../components/site/FadeIn'
+// import { div } from 'framer-motion/client'
 
 export function ExperiencePage({ pageKey }) {
   const { content, isLoading, error } = usePageContent(pageKey)
@@ -26,11 +27,21 @@ export function ExperiencePage({ pageKey }) {
       fade={false}
     >
       <PageHero hero={content.hero} compact />
-      <ContentHighlights items={content.highlights} />
+      <div className="mx-auto w-full max-w-[1440px]">
+        {" "}
+        <ContentHighlights items={content.highlights} />
+      </div>
 
       {content.sections.map((section, index) => (
-        <EditorialSplitSection key={section.title} section={section} reverse={index % 2 === 1} />
+        <div className="mx-auto w-full max-w-[1440px]">
+          {" "}
+          <EditorialSplitSection
+            key={section.title}
+            section={section}
+            reverse={index % 2 === 1}
+          />
+        </div>
       ))}
     </FadeIn>
-  )
+  );
 }

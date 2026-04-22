@@ -2,7 +2,6 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 html {
-  /* Reduce typography scale (rem-based classes, including Outlet content, will follow). */
   font-size: 13px;
 }
 

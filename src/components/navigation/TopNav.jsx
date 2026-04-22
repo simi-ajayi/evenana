@@ -80,7 +80,7 @@ export function TopNav() {
       className={[
         'fixed left-1/2 top-4 z-50 w-[92%] -translate-x-1/2 border-b transition-colors md:w-[90%]',
         headerBorderClass,
-        hasSolidBackground ? 'bg-white dark:bg-bg' : 'bg-transparent',
+        hasSolidBackground ? 'bg-surface dark:bg-bg' : 'bg-transparent',
         headerTextClass,
       ].join(' ')}
       duration={0.2}
