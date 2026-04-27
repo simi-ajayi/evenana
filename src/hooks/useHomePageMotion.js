@@ -22,7 +22,6 @@ export function useHomePageMotion(pageRef, options = {}) {
       const intro = gsap.timeline({ defaults: { ease: 'expo.out' } })
 
       intro
-        .from('[data-hero-overlay]', { opacity: 0, duration: 1.2 })
         .from(
           '[data-hero-badge]',
           {
@@ -46,15 +45,21 @@ export function useHomePageMotion(pageRef, options = {}) {
         )
         .from('[data-hero-copy]', { y: 26, opacity: 0, duration: 0.9 }, 0.55)
         .from('[data-hero-cta]', { y: 22, opacity: 0, duration: 0.9, stagger: 0.06 }, 0.68)
-        .from(
+        .fromTo(
           '[data-ani-hero-image]',
           {
-            scale: 1.25,
-            rotate: 2.8,
-            filter: 'brightness(0.58)',
-            duration: 1.5,
+            scale: 1.1,
+            yPercent: 6,
+            rotate: 1.6,
           },
-          0,
+          {
+            scale: 1,
+            yPercent: 0,
+            rotate: 0,
+            duration: 1.35,
+            ease: 'power3.out',
+          },
+          0.02,
         )
 
       gsap.utils.toArray('[data-ani-section]').forEach((section, index) => {

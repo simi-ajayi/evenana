@@ -31,7 +31,10 @@ export function PageHero({ hero }) {
         data-ani-image
         data-ani-hero-image
         src={hero?.image || heroImage}
-        alt={hero?.title || 'Evenana'}
+        alt={hero?.title || "Evenana"}
+        loading="eager"
+        decoding="async"
+        fetchPriority="high"
         className="absolute inset-0 h-full w-full object-cover object-center"
       />
       <div
@@ -41,18 +44,11 @@ export function PageHero({ hero }) {
 
       <TopNav />
       <div className="relative z-10 flex h-full flex-col justify-between px-4 pb-4 pt-24 sm:px-6 sm:pb-6 sm:pt-28 lg:px-7 lg:pb-7 lg:pt-32">
-        <div className="flex justify-end px-2 md:px-10">
-          <p
-            data-hero-badge
-            className="rounded-full border border-[#f7f1e6]/50 bg-[#f7f1e6]/10 px-4 py-1.5 text-[0.66rem] font-semibold uppercase tracking-[0.16em] text-[#f7f1e6]"
-          >
-            {hero?.label || 'Luxury Wellness Studio'}
-          </p>
-        </div>
+    
 
         <div className="flex h-full flex-col justify-end gap-6 px-2 pb-20 pt-8 md:flex-row md:items-end md:justify-between md:px-10 md:pt-0">
-          <div>
-            <h1 className="text-[clamp(3.25rem,8vw,7.5rem)] leading-[0.91] text-[#f5f1e8]">
+          <div className=''>
+            <h1 className="text-[clamp(3.25rem,8vw,7.5rem)] md:text-left text-center leading-[0.91] text-[#f5f1e8]">
               <span data-hero-title-line className="block">
                 {titleLead}
               </span>
@@ -68,31 +64,27 @@ export function PageHero({ hero }) {
             {hero?.description ? (
               <p
                 data-hero-copy
-                className="max-w-[30rem] text-[0.9rem] leading-[1.6] text-[#eee7db]/92 sm:text-[1.35rem]"
+                className="max-w-[30rem] text-center md:text-left text-[0.9rem] leading-[1.6] text-[#eee7db]/92 sm:text-[1.35rem]"
               >
                 {hero.description}
               </p>
             ) : null}
 
-            <div className="mt-8 flex flex-wrap items-center gap-3">
-              <Link
-                data-hero-cta
-                to={primaryCta.to}
-                className="rounded-full bg-[#f4efe6] px-7 py-3 text-[0.95rem] font-semibold uppercase tracking-[0.14em] text-[#172017] transition hover:-translate-y-0.5 hover:bg-white"
-              >
-                {primaryCta.label}
+            <div className="mt-8 justify-center flex flex-wrap items-center gap-3">
+              <Link data-hero-cta to={primaryCta.to}>
+                <div className="rounded-full bg-[#f4efe6] px-7 py-3 text-[0.95rem] font-semibold uppercase tracking-[0.14em] text-[#172017] transition hover:-translate-y-0.5 hover:bg-white">
+                  {primaryCta.label}
+                </div>{" "}
               </Link>
-              <Link
-                data-hero-cta
-                to={secondaryCta.to}
-                className="rounded-full border border-[#f4eee2]/50 px-7 py-3 text-[0.95rem] font-semibold uppercase tracking-[0.14em] text-[#f0e8dc] transition hover:bg-[#f4eee2]/10"
-              >
-                {secondaryCta.label}
+              <Link data-hero-cta to={secondaryCta.to}>
+                <div className="rounded-full border border-[#f4eee2]/50 px-7 py-3 text-[0.95rem] font-semibold uppercase tracking-[0.14em] text-[#f0e8dc] transition hover:bg-[#f4eee2]/10">
+                  {secondaryCta.label}
+                </div>{" "}
               </Link>
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

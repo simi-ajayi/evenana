@@ -22,6 +22,8 @@ function TreatmentBrochureItem({ service }) {
           alt={service.title}
           className="h-[16rem] w-full object-cover transition-transform duration-700 group-hover:scale-[1.04] md:h-[18rem]"
           loading="lazy"
+          decoding="async"
+          fetchPriority="low"
         />
       </Link>
 

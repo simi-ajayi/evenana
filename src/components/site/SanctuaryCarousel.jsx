@@ -39,6 +39,9 @@ export function SanctuaryCarousel({ cards = [] }) {
               <img
                 src={card.image}
                 alt={card.title}
+                loading="lazy"
+                decoding="async"
+                fetchPriority="low"
                 className="absolute inset-0 h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-black/20" />
@@ -76,6 +79,9 @@ export function SanctuaryCarousel({ cards = [] }) {
               <img
                 src={card.image}
                 alt={card.title}
+                loading="lazy"
+                decoding="async"
+                fetchPriority="low"
                 className={[
                   "absolute inset-0 h-full w-full object-cover transition-transform duration-700",
                   isActive ? "scale-[1.03]" : "scale-100",
@@ -94,4 +100,3 @@ export function SanctuaryCarousel({ cards = [] }) {
     </FadeIn>
   );
 }
-

@@ -281,6 +281,9 @@ export function HomeTopServicesSection() {
                   data-ani-image={!isDuplicate ? "" : undefined}
                   src={service.image}
                   alt={service.title}
+                  loading="lazy"
+                  decoding="async"
+                  fetchPriority="low"
                   className="h-[clamp(11rem,21vw,18.75rem)] w-[clamp(8.4rem,14vw,12.5rem)] rounded-full object-cover"
                   style={imageSizeStyle}
                 />
@@ -368,6 +371,9 @@ export function HomeGallerySection() {
             data-ani-image
             src={mosaicImages[0]}
             alt="Back massage in a serene room"
+            loading="lazy"
+            decoding="async"
+            fetchPriority="low"
             className="aspect-[16/10] w-full object-cover object-center"
           />
         </figure>
@@ -383,6 +389,9 @@ export function HomeGallerySection() {
             data-ani-image
             src={mosaicImages[1]}
             alt="Facial care treatment"
+            loading="lazy"
+            decoding="async"
+            fetchPriority="low"
             className="aspect-[16/9] w-full object-cover object-center"
           />
         </figure>
@@ -398,6 +407,9 @@ export function HomeGallerySection() {
             data-ani-image
             src={mosaicImages[3]}
             alt="Neck and shoulder spa therapy"
+            loading="lazy"
+            decoding="async"
+            fetchPriority="low"
             className="aspect-[4/5] w-full object-cover object-center"
           />
         </figure>
@@ -413,6 +425,9 @@ export function HomeGallerySection() {
             data-ani-image
             src={mosaicImages[2]}
             alt="Massage therapy session"
+            loading="lazy"
+            decoding="async"
+            fetchPriority="low"
             className="aspect-[4/3] w-full object-cover object-center"
           />
         </figure>
@@ -441,6 +456,9 @@ export function HomeGallerySection() {
             data-ani-image
             src={mosaicImages[4]}
             alt="Aromatherapy setup"
+            loading="lazy"
+            decoding="async"
+            fetchPriority="low"
             className="aspect-[4/3] w-full object-cover object-center"
           />
         </figure>
@@ -456,6 +474,9 @@ export function HomeGallerySection() {
             data-ani-image
             src={mosaicImages[5]}
             alt="Relaxing massage"
+            loading="lazy"
+            decoding="async"
+            fetchPriority="low"
             className="aspect-[4/3] w-full object-cover object-center"
           />
         </figure>
@@ -518,6 +539,9 @@ export function HomePartnerSection() {
             data-ani-image
             src={spa12}
             alt="Spa candles"
+            loading="lazy"
+            decoding="async"
+            fetchPriority="low"
             className="h-[clamp(18rem,34vw,38rem)] w-full object-cover"
           />
         </figure>
@@ -549,6 +573,9 @@ export function HomePartnerSection() {
             data-ani-image
             src={spa08}
             alt="Facial relaxation"
+            loading="lazy"
+            decoding="async"
+            fetchPriority="low"
             className="h-[clamp(14rem,24vw,25rem)] w-full object-cover"
           />
         </figure>
@@ -616,6 +643,9 @@ export function HomeBenefitsSection() {
             data-ani-image
             src={spa03}
             alt="Natural spa elements"
+            loading="lazy"
+            decoding="async"
+            fetchPriority="low"
             className="h-[clamp(15rem,28vw,30rem)] w-full object-cover"
           />
         </figure>
@@ -630,6 +660,9 @@ export function HomeBenefitsSection() {
             data-ani-image
             src={spa09}
             alt="Head massage"
+            loading="lazy"
+            decoding="async"
+            fetchPriority="low"
             className="h-[clamp(16rem,30vw,32rem)] w-full object-cover"
           />
         </figure>
@@ -932,7 +965,15 @@ export function HomeBookingSection() {
       </div>
 
       <figure className={imageCardClass}>
-        <img data-ani-image src={spa13} alt="Beauty portrait" className="h-full min-h-[20rem] w-full object-cover" />
+        <img
+          data-ani-image
+          src={spa13}
+          alt="Beauty portrait"
+          loading="lazy"
+          decoding="async"
+          fetchPriority="low"
+          className="h-full min-h-[20rem] w-full object-cover"
+        />
       </figure>
     </section>
   )

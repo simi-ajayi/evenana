@@ -14,6 +14,8 @@ export function ServiceCard({ service }) {
         alt={service.title}
         className="h-[25rem] w-full object-cover md:h-full"
         loading="lazy"
+        decoding="async"
+        fetchPriority="low"
       />
 
       <div className="grid gap-4 p-6 md:p-8">

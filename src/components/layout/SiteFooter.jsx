@@ -9,10 +9,24 @@ const footerRoutes = [{ path: '/', label: 'Home', key: 'home' }, ...navRoutes, {
 export function SiteFooter() {
   return (
     <FadeIn as="footer" className="relative mt-4 w-full overflow-hidden border-t border-[#304133] bg-[#141b14] text-[#efe9dc]" duration={0.4}>
-      <img src={spa04} alt="Aromatherapy" className="absolute inset-0 h-full w-full object-cover opacity-20" />
+      <img
+        src={spa04}
+        alt="Aromatherapy"
+        loading="lazy"
+        decoding="async"
+        fetchPriority="low"
+        className="absolute inset-0 h-full w-full object-cover opacity-20"
+      />
       <div className="relative z-10 mx-auto grid w-full max-w-[1220px] gap-8 px-4 py-9 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
         <section>
-          <img src={footerWordmark} alt="Evenana" className="h-20 w-auto" />
+          <img
+            src={footerWordmark}
+            alt="Evenana"
+            loading="lazy"
+            decoding="async"
+            fetchPriority="low"
+            className="h-20 w-auto"
+          />
           <p className="mt-2 max-w-[17rem] text-[0.74rem] leading-[1.7] text-[#d0c7b8]">
             Personalized spa experiences with premium care and intentional rituals for body, skin, and mind.
           </p>

@@ -73,12 +73,22 @@ export function TopNav({ tone = 'hero' }) {
             className="inline-flex items-center gap-3"
             onClick={() => setIsMenuOpen(false)}
           >
-            <img src={logo} alt="Evenana" className="w-40 h-40 absolute mt-8" />
+            <img
+              src={logo}
+              alt="Evenana"
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
+              className="w-40 h-40 absolute mt-8"
+            />
             <img
               data-ani-image
               src={brandWordmark}
               alt="Evenana"
-              className="h-40 w-auto ml-30    absolute"
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
+              className="h-40 w-auto ml-30  mt-6  absolute"
             />
           </NavLink>
 
@@ -160,7 +170,7 @@ export function TopNav({ tone = 'hero' }) {
             ))}
             <NavLink
               to="/bookings"
-              className="mt-1 inline-flex w-full items-center justify-center rounded-full border border-[#1f281f] bg-[#1f281f] px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-[#f7f1e6] transition hover:bg-[#162016]"
+              className="mt-1 inline-flex w-full items-center justify-center rounded-full border border-[#1f281f] bg-[#1f281f] px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-[#f7f1e6]! transition hover:bg-[#162016]"
               onClick={() => setIsMenuOpen(false)}
             >
               Book Now

@@ -43,12 +43,26 @@ export function FirstLoadScreen({ onComplete }) {
         <p className="font-body text-2xl mx-auto text-center uppercase tracking-[0.2em] text-[#d6cfbf]">Preparing Your Sanctuary</p>
 
         <div className="relative mt-1 w-[80vw] md:w-[40vw]">
-          <img src={wordmark} alt="Evenana" className="w-full opacity-25" />
+          <img
+            src={wordmark}
+            alt="Evenana"
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
+            className="w-full opacity-25"
+          />
           <div
             data-loader-wordmark-mask
             className="absolute inset-y-0 left-0 w-0 overflow-hidden border-r border-[#f4eee2]/95"
           >
-            <img src={wordmark} alt="Evenana" className="md:w-[40vw] w-[80vw] max-w-none" />
+            <img
+              src={wordmark}
+              alt="Evenana"
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
+              className="md:w-[40vw] w-[80vw] max-w-none"
+            />
           </div>
         </div>
       </div>

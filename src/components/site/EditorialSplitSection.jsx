@@ -5,7 +5,15 @@ export function EditorialSplitSection({ section, reverse = false }) {
     key: `${section.title}-image`,
     children: (
       <figure className="overflow-hidden rounded-[1.55rem] bg-[#f6f1e5] shadow-[0_18px_38px_-32px_rgba(22,28,20,0.6)]">
-        <img data-ani-image src={section.image} alt={section.title} className="h-[21rem] w-full object-cover md:h-[28rem]" />
+        <img
+          data-ani-image
+          src={section.image}
+          alt={section.title}
+          loading="lazy"
+          decoding="async"
+          fetchPriority="low"
+          className="h-[21rem] w-full object-cover md:h-[28rem]"
+        />
       </figure>
     ),
   }

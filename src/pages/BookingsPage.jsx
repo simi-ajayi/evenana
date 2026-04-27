@@ -47,7 +47,15 @@ export function BookingsPage() {
       key: 'booking-image-main',
       children: (
         <figure className="overflow-hidden rounded-[1.6rem] bg-[#f8f3e8] shadow-[0_20px_48px_-36px_rgba(28,33,25,0.62)]">
-          <img data-ani-image src={spa07} alt="Massage preparation" className="h-[23rem] w-full object-cover" />
+          <img
+            data-ani-image
+            src={spa07}
+            alt="Massage preparation"
+            loading="lazy"
+            decoding="async"
+            fetchPriority="low"
+            className="h-[23rem] w-full object-cover"
+          />
         </figure>
       ),
     },
@@ -80,7 +88,15 @@ export function BookingsPage() {
       key: 'booking-image-side-01',
       children: (
         <figure className="overflow-hidden rounded-[1.3rem] bg-[#f7f2e8] shadow-[0_14px_34px_-28px_rgba(28,33,25,0.54)]">
-          <img data-ani-image src={spa01} alt="Hot stone ritual" className="h-[15rem] w-full object-cover" />
+          <img
+            data-ani-image
+            src={spa01}
+            alt="Hot stone ritual"
+            loading="lazy"
+            decoding="async"
+            fetchPriority="low"
+            className="h-[15rem] w-full object-cover"
+          />
         </figure>
       ),
     },
@@ -88,7 +104,15 @@ export function BookingsPage() {
       key: 'booking-image-side-02',
       children: (
         <figure className="overflow-hidden rounded-[1.3rem] bg-[#f7f2e8] shadow-[0_14px_34px_-28px_rgba(28,33,25,0.54)]">
-          <img data-ani-image src={spa12} alt="Spa interior" className="h-[15rem] w-full object-cover" />
+          <img
+            data-ani-image
+            src={spa12}
+            alt="Spa interior"
+            loading="lazy"
+            decoding="async"
+            fetchPriority="low"
+            className="h-[15rem] w-full object-cover"
+          />
         </figure>
       ),
     },
@@ -96,7 +120,15 @@ export function BookingsPage() {
       key: 'booking-image-side-03',
       children: (
         <figure className="overflow-hidden rounded-[1.3rem] bg-[#f7f2e8] shadow-[0_14px_34px_-28px_rgba(28,33,25,0.54)]">
-          <img data-ani-image src={spa04} alt="Aromatherapy oil" className="h-[15rem] w-full object-cover" />
+          <img
+            data-ani-image
+            src={spa04}
+            alt="Aromatherapy oil"
+            loading="lazy"
+            decoding="async"
+            fetchPriority="low"
+            className="h-[15rem] w-full object-cover"
+          />
         </figure>
       ),
     },
@@ -104,7 +136,15 @@ export function BookingsPage() {
       key: 'booking-image-side-04',
       children: (
         <figure className="overflow-hidden rounded-[1.3rem] bg-[#f7f2e8] shadow-[0_14px_34px_-28px_rgba(28,33,25,0.54)]">
-          <img data-ani-image src={spa03} alt="Calming spa tools" className="h-[15rem] w-full object-cover" />
+          <img
+            data-ani-image
+            src={spa03}
+            alt="Calming spa tools"
+            loading="lazy"
+            decoding="async"
+            fetchPriority="low"
+            className="h-[15rem] w-full object-cover"
+          />
         </figure>
       ),
     },

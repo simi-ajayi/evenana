@@ -21,6 +21,9 @@ export function RouteHighlights({ items }) {
               <img
                 src={item.image}
                 alt={item.title}
+                loading="lazy"
+                decoding="async"
+                fetchPriority="low"
                 className="h-[20rem] w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="space-y-2 p-5">
