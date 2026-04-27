@@ -46,7 +46,7 @@ export function BookingsPage() {
     {
       key: 'booking-image-main',
       children: (
-        <figure className="overflow-hidden rounded-[1.6rem] bg-[#f8f3e8] shadow-[0_20px_48px_-36px_rgba(28,33,25,0.62)]">
+        <figure className="overflow-hidden rounded-[1.6rem] bg-[#f5eefb] shadow-[0_20px_48px_-36px_rgba(28,33,25,0.62)]">
           <img
             data-ani-image
             src={spa07}
@@ -62,7 +62,7 @@ export function BookingsPage() {
     {
       key: 'booking-copy',
       children: (
-        <article className="rounded-[1.5rem] bg-[#f9f4ea] p-5 shadow-[0_18px_42px_-32px_rgba(29,35,26,0.5)] sm:p-6">
+        <article className="rounded-[1.5rem] bg-[#f7f0fc] p-5 shadow-[0_18px_42px_-32px_rgba(29,35,26,0.5)] sm:p-6">
           <p data-ani-copy className="text-[0.72rem] uppercase tracking-[0.16em] text-[#5b5549]">
             Before You Arrive
           </p>
@@ -76,7 +76,7 @@ export function BookingsPage() {
           <ul className="mt-4 space-y-2">
             {bookingPerks.map((perk) => (
               <li key={perk} className="flex items-start gap-2 text-[0.82rem] leading-[1.58] text-[#2e332c]">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#1e2a1f]" />
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#6e4d87]" />
                 <span data-ani-copy>{perk}</span>
               </li>
             ))}
@@ -87,7 +87,7 @@ export function BookingsPage() {
     {
       key: 'booking-image-side-01',
       children: (
-        <figure className="overflow-hidden rounded-[1.3rem] bg-[#f7f2e8] shadow-[0_14px_34px_-28px_rgba(28,33,25,0.54)]">
+        <figure className="overflow-hidden rounded-[1.3rem] bg-[#f5eefb] shadow-[0_14px_34px_-28px_rgba(28,33,25,0.54)]">
           <img
             data-ani-image
             src={spa01}
@@ -103,7 +103,7 @@ export function BookingsPage() {
     {
       key: 'booking-image-side-02',
       children: (
-        <figure className="overflow-hidden rounded-[1.3rem] bg-[#f7f2e8] shadow-[0_14px_34px_-28px_rgba(28,33,25,0.54)]">
+        <figure className="overflow-hidden rounded-[1.3rem] bg-[#f5eefb] shadow-[0_14px_34px_-28px_rgba(28,33,25,0.54)]">
           <img
             data-ani-image
             src={spa12}
@@ -119,7 +119,7 @@ export function BookingsPage() {
     {
       key: 'booking-image-side-03',
       children: (
-        <figure className="overflow-hidden rounded-[1.3rem] bg-[#f7f2e8] shadow-[0_14px_34px_-28px_rgba(28,33,25,0.54)]">
+        <figure className="overflow-hidden rounded-[1.3rem] bg-[#f5eefb] shadow-[0_14px_34px_-28px_rgba(28,33,25,0.54)]">
           <img
             data-ani-image
             src={spa04}
@@ -135,7 +135,7 @@ export function BookingsPage() {
     {
       key: 'booking-image-side-04',
       children: (
-        <figure className="overflow-hidden rounded-[1.3rem] bg-[#f7f2e8] shadow-[0_14px_34px_-28px_rgba(28,33,25,0.54)]">
+        <figure className="overflow-hidden rounded-[1.3rem] bg-[#f5eefb] shadow-[0_14px_34px_-28px_rgba(28,33,25,0.54)]">
           <img
             data-ani-image
             src={spa03}
@@ -158,7 +158,7 @@ export function BookingsPage() {
 
       <section data-ani-section className="mx-auto w-full max-w-[1220px] px-3 sm:px-5 lg:px-0">
         <div className="grid gap-6 lg:grid-cols-[1.03fr_0.97fr]">
-          <article className="rounded-[1.6rem] bg-[#f7f2e8] p-5 shadow-[0_24px_50px_-38px_rgba(22,28,20,0.62)] sm:p-6">
+          <article className="rounded-[1.6rem] bg-[#f5eefb] p-5 shadow-[0_24px_50px_-38px_rgba(22,28,20,0.62)] sm:p-6">
             <p data-ani-copy className="text-[0.72rem] uppercase tracking-[0.16em] text-[#5e574c]">
               Appointment Details
             </p>
@@ -171,44 +171,44 @@ export function BookingsPage() {
                 <input
                   type="text"
                   placeholder="First name"
-                  className="h-11 rounded-xl bg-[#fffdf8] px-3 text-[0.82rem] text-[#232721] outline-none ring-1 ring-[#e1d7c7] transition focus:ring-[#223024]"
+                  className="h-11 rounded-xl bg-[#fffcff] px-3 text-[0.82rem] text-[#232721] outline-none ring-1 ring-[#e2d5f0] transition focus:ring-[#6e4d87]"
                 />
                 <input
                   type="text"
                   placeholder="Last name"
-                  className="h-11 rounded-xl bg-[#fffdf8] px-3 text-[0.82rem] text-[#232721] outline-none ring-1 ring-[#e1d7c7] transition focus:ring-[#223024]"
+                  className="h-11 rounded-xl bg-[#fffcff] px-3 text-[0.82rem] text-[#232721] outline-none ring-1 ring-[#e2d5f0] transition focus:ring-[#6e4d87]"
                 />
               </div>
               <div className="grid gap-3 sm:grid-cols-2">
                 <input
                   type="email"
                   placeholder="Email"
-                  className="h-11 rounded-xl bg-[#fffdf8] px-3 text-[0.82rem] text-[#232721] outline-none ring-1 ring-[#e1d7c7] transition focus:ring-[#223024]"
+                  className="h-11 rounded-xl bg-[#fffcff] px-3 text-[0.82rem] text-[#232721] outline-none ring-1 ring-[#e2d5f0] transition focus:ring-[#6e4d87]"
                 />
                 <input
                   type="tel"
                   placeholder="Phone"
-                  className="h-11 rounded-xl bg-[#fffdf8] px-3 text-[0.82rem] text-[#232721] outline-none ring-1 ring-[#e1d7c7] transition focus:ring-[#223024]"
+                  className="h-11 rounded-xl bg-[#fffcff] px-3 text-[0.82rem] text-[#232721] outline-none ring-1 ring-[#e2d5f0] transition focus:ring-[#6e4d87]"
                 />
               </div>
               <div className="grid gap-3 sm:grid-cols-2">
                 <input
                   type="date"
-                  className="h-11 rounded-xl bg-[#fffdf8] px-3 text-[0.82rem] text-[#232721] outline-none ring-1 ring-[#e1d7c7] transition focus:ring-[#223024]"
+                  className="h-11 rounded-xl bg-[#fffcff] px-3 text-[0.82rem] text-[#232721] outline-none ring-1 ring-[#e2d5f0] transition focus:ring-[#6e4d87]"
                 />
                 <input
                   type="time"
-                  className="h-11 rounded-xl bg-[#fffdf8] px-3 text-[0.82rem] text-[#232721] outline-none ring-1 ring-[#e1d7c7] transition focus:ring-[#223024]"
+                  className="h-11 rounded-xl bg-[#fffcff] px-3 text-[0.82rem] text-[#232721] outline-none ring-1 ring-[#e2d5f0] transition focus:ring-[#6e4d87]"
                 />
               </div>
-              <select className="h-11 w-full rounded-xl bg-[#fffdf8] px-3 text-[0.82rem] text-[#232721] outline-none ring-1 ring-[#e1d7c7] transition focus:ring-[#223024]">
+              <select className="h-11 w-full rounded-xl bg-[#fffcff] px-3 text-[0.82rem] text-[#232721] outline-none ring-1 ring-[#e2d5f0] transition focus:ring-[#6e4d87]">
                 <option>Select service</option>
                 <option>Deep Tissue Massage</option>
                 <option>Swedish Relaxation</option>
                 <option>Hot Stone Therapy</option>
                 <option>Head & Neck Reboot</option>
               </select>
-              <select className="h-11 w-full rounded-xl bg-[#fffdf8] px-3 text-[0.82rem] text-[#232721] outline-none ring-1 ring-[#e1d7c7] transition focus:ring-[#223024]">
+              <select className="h-11 w-full rounded-xl bg-[#fffcff] px-3 text-[0.82rem] text-[#232721] outline-none ring-1 ring-[#e2d5f0] transition focus:ring-[#6e4d87]">
                 <option>Select therapist preference</option>
                 <option>No preference</option>
                 <option>Female therapist</option>
@@ -217,18 +217,18 @@ export function BookingsPage() {
               <textarea
                 rows={3}
                 placeholder="Health notes or preferences"
-                className="w-full rounded-xl bg-[#fffdf8] px-3 py-2 text-[0.82rem] text-[#232721] outline-none ring-1 ring-[#e1d7c7] transition focus:ring-[#223024]"
+                className="w-full rounded-xl bg-[#fffcff] px-3 py-2 text-[0.82rem] text-[#232721] outline-none ring-1 ring-[#e2d5f0] transition focus:ring-[#6e4d87]"
               />
               <button
                 type="button"
-                className="inline-flex h-11 w-full items-center justify-center rounded-full bg-[#1d261e] text-[0.73rem] font-semibold uppercase tracking-[0.14em] text-[#f3ede2] transition hover:bg-[#141c15]"
+                className="inline-flex h-11 w-full items-center justify-center rounded-full bg-[#6e4d87] text-[0.73rem] font-semibold uppercase tracking-[0.14em] text-[#efe5f8] transition hover:bg-[#4f365f]"
               >
                 Confirm Reservation
               </button>
             </form>
           </article>
 
-          <article className="rounded-[1.6rem] bg-[#f9f4ea] p-5 shadow-[0_20px_44px_-36px_rgba(24,29,21,0.56)] sm:p-6">
+          <article className="rounded-[1.6rem] bg-[#f7f0fc] p-5 shadow-[0_20px_44px_-36px_rgba(24,29,21,0.56)] sm:p-6">
             <h3 data-ani-heading className="text-[1.46rem] leading-tight text-[#1b201a] sm:text-[1.7rem]">
               Available Time Slots
             </h3>
@@ -244,7 +244,7 @@ export function BookingsPage() {
                         key={slot}
                         data-float={groupIndex % 2 === 0 && slotIndex % 2 === 0 ? 'true' : undefined}
                         type="button"
-                        className="rounded-full bg-[#fffcf7] px-3 py-1.5 text-[0.74rem] font-medium text-[#232721] ring-1 ring-[#d7cbb8] transition hover:ring-[#1f2b20]"
+                        className="rounded-full bg-[#fffcff] px-3 py-1.5 text-[0.74rem] font-medium text-[#232721] ring-1 ring-[#d8c9e8] transition hover:ring-[#6e4d87]"
                       >
                         {slot}
                       </button>

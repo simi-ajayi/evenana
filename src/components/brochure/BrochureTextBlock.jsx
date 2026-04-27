@@ -16,7 +16,7 @@ function renderBulletList(lines, key) {
         <li
           key={index}
           data-ani-copy
-          className="text-[0.9rem] leading-[1.62] text-[#4f4a41] before:mr-3 before:text-[#8f7658] before:content-['•']"
+          className="text-[0.9rem] leading-[1.62] text-[#4f4a41] before:mr-3 before:text-[#9a80b0] before:content-['•']"
         >
           {line.replace(/^•\s*/, '')}
         </li>
@@ -65,7 +65,7 @@ export function BrochureTextBlock({ title, content }) {
     children: (
       <article
         data-float={index % 3 === 0 ? 'true' : undefined}
-        className="group relative overflow-hidden rounded-[1.15rem] bg-[#fcf8ef] px-4 py-4 shadow-[0_14px_30px_-28px_rgba(31,34,26,0.56)]"
+        className="group relative overflow-hidden rounded-[1.15rem] bg-[#faf5ff] px-4 py-4 shadow-[0_14px_30px_-28px_rgba(31,34,26,0.56)]"
       >
         {renderBlock(block, index)}
       </article>
@@ -74,7 +74,7 @@ export function BrochureTextBlock({ title, content }) {
 
   return (
     <section data-ani-section className="mx-auto w-full max-w-[1220px] space-y-5 px-3 sm:px-5 lg:px-0">
-      <div className="rounded-[1.6rem] bg-[#f4eee1] p-5 shadow-[0_22px_42px_-34px_rgba(22,26,19,0.56)] sm:p-7">
+      <div className="rounded-[1.6rem] bg-[#f1e8f8] p-5 shadow-[0_22px_42px_-34px_rgba(22,26,19,0.56)] sm:p-7">
         <h2 data-ani-heading className="text-[1.85rem] leading-[1.04] text-[#171c16] sm:text-[2.2rem]">
           {title}
         </h2>

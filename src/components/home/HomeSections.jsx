@@ -120,7 +120,7 @@ const testimonials = [
 ]
 
 const imageCardClass =
-  'overflow-hidden rounded-[1.45rem] bg-[#f8f5ef] shadow-[0_12px_30px_-22px_rgba(31,34,26,0.55)]'
+  'overflow-hidden rounded-[1.45rem] bg-[#f8f4fc] shadow-[0_12px_30px_-22px_rgba(31,34,26,0.55)]'
 
 export function HomeHeroSection() {
   const hero = {
@@ -154,7 +154,7 @@ export function HomeAboutSection() {
         <div className="flex w-[31%]  min-w-0 flex-col justify-between">
           <p
             data-ani-heading
-            className="font-serif text-[clamp(1.7rem,3vw,3rem)] font-bold italic text-[#1d231c]"
+            className="font-serif text-[clamp(1.7rem,3vw,3rem)] font-bold italic text-[#6e4d87]"
           >
             About Us
           </p>
@@ -223,7 +223,7 @@ export function HomeTopServicesSection() {
     <section
       data-ani-section
       data-services-section
-      className="rounded-t-[70px] shadow-2xl h-full min-h-[80vh] overflow-hidden bg-[#f8f5ef] px-[clamp(0.8rem,2.4vw,1.75rem)] py-[clamp(1.3rem,2.8vw,2.2rem)]"
+      className="rounded-t-[70px] shadow-2xl h-full min-h-[80vh] overflow-hidden bg-[#f8f4fc] px-[clamp(0.8rem,2.4vw,1.75rem)] py-[clamp(1.3rem,2.8vw,2.2rem)]"
     >
       <div className="flex w-full items-end justify-between gap-[clamp(1rem,4vw,6rem)] px-[clamp(0.3rem,2.9vw,4.2rem)] pt-[clamp(0.9rem,3.7vw,4rem)]">
         <div className='p-10 w-full flex justify-between'>
@@ -321,7 +321,7 @@ export function HomeMetricsSection() {
   return (
     <section
       data-ani-section
-      className="h-[20vh] w-full justify-center flex bg-[#1f281f] px-4 py-7 text-[#f4efe3] sm:px-7 sm:py-8"
+      className="h-[20vh] w-full justify-center flex bg-[#6e4d87] px-4 py-7 text-[#f4efe3] sm:px-7 sm:py-8"
     >
       <div className="grid grid-cols-4 gap-5 md:gap-52 mx-auto items-center sm:grid-cols-4">
         {metrics.map((metric, index) => (
@@ -353,7 +353,7 @@ export function HomeGallerySection() {
           </p>
           <h3
             data-ani-heading
-            className="mt-2 text-[clamp(1.7rem,3.1vw,3.1rem)] leading-[1.14] text-[#151913]"
+            className="mt-2 text-[clamp(1.7rem,3.1vw,3.1rem)] leading-[1.14] text-[#1f1827]"
           >
             With Every Soothing{" "}
             <span className="font-serif italic">Treatment You Receive</span>
@@ -519,7 +519,7 @@ export function HomePartnerSection() {
   const partnerFeatureItems = partnerPoints.map((point) => ({
     key: `partner-point-${point.title}`,
     children: (
-      <article className="rounded-[1.35rem] shadow-xl bg-[#fbf8f2] p-[clamp(1rem,1.5vw,1.5rem)]">
+      <article className="rounded-[1.35rem] shadow-xl bg-[#faf6ff] p-[clamp(1rem,1.5vw,1.5rem)]">
         <p data-ani-copy className="text-[0.82rem] font-semibold uppercase tracking-[0.16em] text-[#232922]">
           {point.title}
         </p>
@@ -550,7 +550,7 @@ export function HomePartnerSection() {
     {
       key: 'partner-copy',
       children: (
-        <div className="rounded-[1.45rem] shadow-lg bg-[#f8f4ec] p-[clamp(1rem,1.6vw,1.8rem)]">
+        <div className="rounded-[1.45rem] shadow-lg bg-[#f6effb] p-[clamp(1rem,1.6vw,1.8rem)]">
           <h3
             data-ani-heading
             className="text-[clamp(2rem,3.4vw,3.15rem)] leading-[1.08] text-[#171b16]"
@@ -585,13 +585,13 @@ export function HomePartnerSection() {
     {
       key: 'partner-cta',
       children: (
-        <div className="rounded-[1.45rem] shadow-lg bg-[#efe9dc] p-[clamp(1rem,1.6vw,1.7rem)] text-center">
+        <div className="rounded-[1.45rem] shadow-lg bg-[#e9def3] p-[clamp(1rem,1.6vw,1.7rem)] text-center">
           <p data-ani-copy className="text-[clamp(0.92rem,0.98vw,1.06rem)] leading-[1.7] text-[#4d473d]">
             Let your wellness journey begin with personalized, rejuvenating massage therapy.
           </p>
           <Link
             to="/bookings"
-            className="mt-4 inline-flex rounded-full bg-[#1f281f] px-5 py-2.5 text-[0.76rem] font-semibold uppercase tracking-[0.13em] text-[#f2eee4] transition hover:bg-[#161d16]"
+            className="mt-4 inline-flex rounded-full bg-[#6e4d87] px-5 py-2.5 text-[0.76rem] font-semibold uppercase tracking-[0.13em] text-[#efe6f7] transition hover:bg-[#4f365f]"
           >
             Book Appointment
           </Link>
@@ -604,7 +604,7 @@ export function HomePartnerSection() {
   return (
     <section
       data-ani-section
-      className="min-h-full rounded-[1.6rem] bg-[#f8f5ef] p-5 sm:p-7 lg:p-9"
+      className="min-h-full rounded-[1.6rem] bg-[#f8f4fc] p-5 sm:p-7 lg:p-9"
     >
       <div className="mx-auto w-full max-w-[1440px] py-20">
         <Masonry
@@ -622,7 +622,7 @@ export function HomeBenefitsSection() {
   const benefitTextItems = wellnessBenefits.map((benefit) => ({
       key: `benefit-${benefit.title}`,
       children: (
-        <article className="rounded-[1.25rem] bg-[#f7f3eb] p-[clamp(1rem,1.3vw,1.4rem)]">
+        <article className="rounded-[1.25rem] bg-[#f5edfa] p-[clamp(1rem,1.3vw,1.4rem)]">
           <h4 data-ani-copy className="text-[clamp(1.15rem,1.4vw,1.44rem)] leading-[1.2] text-[#1e231d]">
             {benefit.title}
           </h4>
@@ -672,14 +672,14 @@ export function HomeBenefitsSection() {
     {
       key: 'benefit-calm-list',
       children: (
-        <div className="rounded-[1.45rem] min-h-[clamp(22rem,52vh,40rem)]  bg-[#f8f4ec] p-5 sm:p-6">
+        <div className="rounded-[1.45rem] min-h-[clamp(22rem,52vh,40rem)]  bg-[#f6effb] p-5 sm:p-6">
           <h3
             data-ani-heading
             className="max-w-[25rem] text-[clamp(2rem,3vw,3.05rem)] leading-[1.09] text-[#171c16]"
           >
             Calm Your Senses With <span className="font-serif italic">Therapeutic Healing</span>
           </h3>
-          <div className="mt-5 divide-y divide-[#d5cab9] rounded-[1rem] bg-[#fcfaf6]">
+          <div className="mt-5 divide-y divide-[#d8cae6] rounded-[1rem] bg-[#fbf8ff]">
             {calmList.map((item, index) => (
               <div key={item} className="flex items-center justify-between px-4 py-[clamp(0.8rem,1.2vw,1rem)]">
                 <p data-ani-copy className="text-[clamp(0.9rem,0.94vw,1.01rem)] leading-[1.54] text-[#2f332c]">
@@ -730,9 +730,9 @@ export function HomeTestimonialsSection() {
 
   const accentThemes = [
     {
-      panel: 'bg-[#efe7da] border-[#d6c8b5]',
+      panel: 'bg-[#e8dcf1] border-[#d8cae6]',
       mark: 'text-[#cc7465]',
-      pill: 'bg-[#f8f3ea] border-[#d8cab7] text-[#3e392f]',
+      pill: 'bg-[#f6effb] border-[#d8cab7] text-[#3e392f]',
       avatar: 'bg-[#d7b594] text-[#1b1c19]',
     },
     {
@@ -748,7 +748,7 @@ export function HomeTestimonialsSection() {
       avatar: 'bg-[#c3afd8] text-[#211b2b]',
     },
     {
-      panel: 'bg-[#efe8d8] border-[#d8cbaf]',
+      panel: 'bg-[#e8dcf1] border-[#d8cbaf]',
       mark: 'text-[#b07f44]',
       pill: 'bg-[#f8f4e9] border-[#e0d4ba] text-[#4a3a26]',
       avatar: 'bg-[#d9bf97] text-[#241d14]',
@@ -756,7 +756,7 @@ export function HomeTestimonialsSection() {
     {
       panel: 'bg-[#f0dfdb] border-[#d7bfb8]',
       mark: 'text-[#b06b60]',
-      pill: 'bg-[#f9f1ef] border-[#ddc7c1] text-[#4c2c26]',
+      pill: 'bg-[#f7edf8] border-[#ddc7c1] text-[#4c2c26]',
       avatar: 'bg-[#dba8a1] text-[#2b1714]',
     },
   ]
@@ -765,7 +765,7 @@ export function HomeTestimonialsSection() {
     <section
       data-ani-section
       data-testimonial-shell
-      className="  bg-[#f8f5ef] px-5 py-7 sm:px-7 sm:py-9"
+      className="  bg-[#f8f4fc] px-5 py-7 sm:px-7 sm:py-9"
     >
       <div className="flex flex-wrap items-end justify-between gap-4">
         <h3 data-ani-heading className="text-[2rem] leading-[1.07] text-[#171b16] sm:text-[2.55rem]">
@@ -777,7 +777,7 @@ export function HomeTestimonialsSection() {
       </div>
 
       <div
-        className="relative mt-6 overflow-hidden rounded-[1.6rem] bg-[radial-gradient(circle_at_80%_0%,#f5eee2_0%,#f0e8db_38%,#e8dece_100%)] p-3 sm:p-4"
+        className="relative mt-6 overflow-hidden rounded-[1.6rem] bg-[radial-gradient(circle_at_80%_0%,#f7f0fc_0%,#ece0f6_40%,#e6d8f2_100%)] p-3 sm:p-4"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
         onFocusCapture={() => setIsPaused(true)}
@@ -822,7 +822,7 @@ export function HomeTestimonialsSection() {
                       </p>
                     </div>
 
-                    <div className="flex flex-col justify-between rounded-[1.9rem] shadow-lg  bg-[#fcfaf5] p-4 sm:p-5">
+                    <div className="flex flex-col justify-between rounded-[1.9rem] shadow-lg  bg-[#fbf8ff] p-4 sm:p-5">
                       <p className={`text-[2.6rem] leading-none ${theme.mark}`}>“</p>
                       <p
                         data-ani-copy
@@ -870,7 +870,7 @@ export function HomeTestimonialsSection() {
                 onClick={() => moveToSlide(index)}
                 aria-label={`View testimonial ${index + 1}`}
                 className={`h-2 rounded-full transition-all duration-300 ${
-                  activeIndex === index ? 'w-9 bg-[#1f281f]' : 'w-2 bg-[#8f8574]/60 hover:bg-[#6d665a]'
+                  activeIndex === index ? 'w-9 bg-[#6e4d87]' : 'w-2 bg-[#8f8574]/60 hover:bg-[#6d665a]'
                 }`}
               />
             ))}
@@ -881,7 +881,7 @@ export function HomeTestimonialsSection() {
               type="button"
               onClick={() => moveToSlide(activeIndex - 1)}
               aria-label="Previous testimonial"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#cdbfa9] bg-[#f7f1e6] text-[1.1rem] text-[#232720] transition hover:bg-[#efe7d9]"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#ccbddf] bg-[#f8f3fc] text-[1.1rem] text-[#232720] transition hover:bg-[#e8dcf1]"
             >
               ←
             </button>
@@ -889,7 +889,7 @@ export function HomeTestimonialsSection() {
               type="button"
               onClick={() => moveToSlide(activeIndex + 1)}
               aria-label="Next testimonial"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#cdbfa9] bg-[#1f281f] text-[1.1rem] text-[#f2ecdf] transition hover:bg-[#151d16]"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#ccbddf] bg-[#6e4d87] text-[1.1rem] text-[#eee4f7] transition hover:bg-[#4f365f]"
             >
               →
             </button>
@@ -903,7 +903,7 @@ export function HomeTestimonialsSection() {
 export function HomeBookingSection() {
   return (
     <section data-ani-section className="grid gap-6 py-9 lg:grid-cols-[1fr_0.95fr] lg:py-12">
-      <div className="rounded-[1.45rem] border border-[#d8cebf] bg-[#f8f4ec] p-5 sm:p-6">
+      <div className="rounded-[1.45rem] border border-[#d9cbe8] bg-[#f6effb] p-5 sm:p-6">
         <h3 data-ani-heading className="text-[2rem] leading-[1.07] text-[#171b16] sm:text-[2.6rem]">
           Book Your <span className="font-serif italic">Appointment Today</span>
         </h3>
@@ -913,37 +913,37 @@ export function HomeBookingSection() {
             <input
               type="text"
               placeholder="First name"
-              className="h-11 rounded-xl border border-[#d3c8b7] bg-[#fffdf8] px-3 text-[0.83rem] text-[#232721] outline-none transition focus:border-[#243226]"
+              className="h-11 rounded-xl border border-[#d9cbe8] bg-[#fffcff] px-3 text-[0.83rem] text-[#232721] outline-none transition focus:border-[#6e4d87]"
             />
             <input
               type="text"
               placeholder="Last name"
-              className="h-11 rounded-xl border border-[#d3c8b7] bg-[#fffdf8] px-3 text-[0.83rem] text-[#232721] outline-none transition focus:border-[#243226]"
+              className="h-11 rounded-xl border border-[#d9cbe8] bg-[#fffcff] px-3 text-[0.83rem] text-[#232721] outline-none transition focus:border-[#6e4d87]"
             />
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
             <input
               type="email"
               placeholder="Email"
-              className="h-11 rounded-xl border border-[#d3c8b7] bg-[#fffdf8] px-3 text-[0.83rem] text-[#232721] outline-none transition focus:border-[#243226]"
+              className="h-11 rounded-xl border border-[#d9cbe8] bg-[#fffcff] px-3 text-[0.83rem] text-[#232721] outline-none transition focus:border-[#6e4d87]"
             />
             <input
               type="tel"
               placeholder="Phone"
-              className="h-11 rounded-xl border border-[#d3c8b7] bg-[#fffdf8] px-3 text-[0.83rem] text-[#232721] outline-none transition focus:border-[#243226]"
+              className="h-11 rounded-xl border border-[#d9cbe8] bg-[#fffcff] px-3 text-[0.83rem] text-[#232721] outline-none transition focus:border-[#6e4d87]"
             />
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
             <input
               type="date"
-              className="h-11 rounded-xl border border-[#d3c8b7] bg-[#fffdf8] px-3 text-[0.83rem] text-[#232721] outline-none transition focus:border-[#243226]"
+              className="h-11 rounded-xl border border-[#d9cbe8] bg-[#fffcff] px-3 text-[0.83rem] text-[#232721] outline-none transition focus:border-[#6e4d87]"
             />
             <input
               type="time"
-              className="h-11 rounded-xl border border-[#d3c8b7] bg-[#fffdf8] px-3 text-[0.83rem] text-[#232721] outline-none transition focus:border-[#243226]"
+              className="h-11 rounded-xl border border-[#d9cbe8] bg-[#fffcff] px-3 text-[0.83rem] text-[#232721] outline-none transition focus:border-[#6e4d87]"
             />
           </div>
-          <select className="h-11 w-full rounded-xl border border-[#d3c8b7] bg-[#fffdf8] px-3 text-[0.83rem] text-[#232721] outline-none transition focus:border-[#243226]">
+          <select className="h-11 w-full rounded-xl border border-[#d9cbe8] bg-[#fffcff] px-3 text-[0.83rem] text-[#232721] outline-none transition focus:border-[#6e4d87]">
             <option>Treatment selection</option>
             <option>Deep Tissue Massage</option>
             <option>Reflexology Session</option>
@@ -953,11 +953,11 @@ export function HomeBookingSection() {
           <textarea
             rows={3}
             placeholder="Special request"
-            className="w-full rounded-xl border border-[#d3c8b7] bg-[#fffdf8] px-3 py-2 text-[0.83rem] text-[#232721] outline-none transition focus:border-[#243226]"
+            className="w-full rounded-xl border border-[#d9cbe8] bg-[#fffcff] px-3 py-2 text-[0.83rem] text-[#232721] outline-none transition focus:border-[#6e4d87]"
           />
           <Link
             to="/bookings"
-            className="inline-flex h-11 w-full items-center justify-center rounded-full bg-[#1e271f] text-[0.74rem] font-semibold uppercase tracking-[0.14em] text-[#f2ede3] transition hover:bg-[#151d16]"
+            className="inline-flex h-11 w-full items-center justify-center rounded-full bg-[#6e4d87] text-[0.74rem] font-semibold uppercase tracking-[0.14em] text-[#efe6f7] transition hover:bg-[#4f365f]"
           >
             Book Appointment
           </Link>

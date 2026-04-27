@@ -34,13 +34,13 @@ export function FirstLoadScreen({ onComplete }) {
   }, [onComplete])
 
   return (
-    <div ref={panelRef} data-loader-panel className="fixed inset-0 z-[120] flex items-center justify-center bg-[#101a13]">
+    <div ref={panelRef} data-loader-panel className="fixed inset-0 z-[120] flex items-center justify-center bg-[#2f223f]">
       <div
         data-loader-glow
-        className="absolute w-full inset-0 bg-[radial-gradient(circle_at_center,rgba(54,82,61,0.64),rgba(16,26,19,0.94)_58%)]"
+        className="absolute w-full inset-0 bg-[radial-gradient(circle_at_center,rgba(120,85,149,0.68),rgba(47,34,63,0.95)_58%)]"
       />
-      <div className="relative z-10 flex flex-col mx-auto texts-center items-center gap-4 px-6 text-[#f4eee2]">
-        <p className="font-body text-2xl mx-auto text-center uppercase tracking-[0.2em] text-[#d6cfbf]">Preparing Your Sanctuary</p>
+      <div className="relative z-10 flex flex-col mx-auto texts-center items-center gap-4 px-6 text-[#f1e8f8]">
+        <p className="font-body text-2xl mx-auto text-center uppercase tracking-[0.2em] text-[#d4c6e5]">Preparing Your Sanctuary</p>
 
         <div className="relative mt-1 w-[80vw] md:w-[40vw]">
           <img
@@ -53,7 +53,7 @@ export function FirstLoadScreen({ onComplete }) {
           />
           <div
             data-loader-wordmark-mask
-            className="absolute inset-y-0 left-0 w-0 overflow-hidden border-r border-[#f4eee2]/95"
+            className="absolute inset-y-0 left-0 w-0 overflow-hidden border-r border-[#f1e8f8]/95"
           >
             <img
               src={wordmark}

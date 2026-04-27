@@ -25,7 +25,7 @@ export function SiteLayout() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-[#eae8e2] text-[#151912] transition-colors">
+    <div className="min-h-screen bg-[#f2edf7] text-[#1f1827] transition-colors">
       <FadeIn
         as="main"
         key={location.pathname}

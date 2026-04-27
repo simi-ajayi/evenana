@@ -8,9 +8,9 @@ import brandWordmark from "../../assets/evenana_white_text.png";
 const navTextClass = 'font-body text-md uppercase tracking-[0.14em]'
 
 function NavItem({ to, label, onSelect, isHeroTone, className = '' }) {
-  const activeTextClass = isHeroTone ? 'text-[#f7f1e6]' : 'text-[#1f281f]'
-  const inactiveTextClass = isHeroTone ? 'text-[#f7f1e6]/78 hover:text-[#f7f1e6]' : 'text-[#1f281f]/72 hover:text-[#1f281f]'
-  const activeUnderlineClass = isHeroTone ? 'after:bg-[#f7f1e6]' : 'after:bg-[#1f281f]'
+  const activeTextClass = isHeroTone ? 'text-[#f8f3fc]' : 'text-[#6e4d87]'
+  const inactiveTextClass = isHeroTone ? 'text-[#f8f3fc]/78 hover:text-[#f8f3fc]' : 'text-[#6e4d87]/72 hover:text-[#6e4d87]'
+  const activeUnderlineClass = isHeroTone ? 'after:bg-[#f8f3fc]' : 'after:bg-[#6e4d87]'
 
   return (
     <NavLink
@@ -64,8 +64,8 @@ export function TopNav({ tone = 'hero' }) {
           className={[
             "flex items-center justify-between gap-4  py-4 md:py-5",
             isHeroTone
-              ? "border-[#f7f1e6]/32 text-[#f7f1e6]"
-              : "border-[#cfc4b2] text-[#1f281f]",
+              ? "border-[#f8f3fc]/32 text-[#f8f3fc]"
+              : "border-[#d1c3e3] text-[#6e4d87]",
           ].join(" ")}
         >
           <NavLink
@@ -107,10 +107,10 @@ export function TopNav({ tone = 'hero' }) {
             <NavLink
               to="/bookings"
               className={[
-                "hidden items-center justify-center text-[#1f281f]! rounded-full border px-5 py-2 text-md font-semibold uppercase tracking-[0.14em] transition-colors md:inline-flex",
+                "hidden items-center justify-center rounded-full border px-5 py-2 text-md font-semibold uppercase tracking-[0.14em] transition-colors md:inline-flex",
                 isHeroTone
-                  ? "border-[#f7f1e6] bg-[#f7f1e6]  hover:bg-white"
-                  : "border-[#1f281f] bg-[#1f281f]  hover:bg-[#162016]",
+                  ? "border-[#f8f3fc] bg-[#f8f3fc] text-[#6e4d87]! hover:bg-white"
+                  : "border-[#6e4d87] bg-[#6e4d87] text-[#f8f3fc]! hover:bg-[#5c3f73]",
               ].join(" ")}
               onClick={() => setIsMenuOpen(false)}
             >
@@ -127,8 +127,8 @@ export function TopNav({ tone = 'hero' }) {
               className={[
                 "flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-full border transition-colors md:hidden",
                 isHeroTone
-                  ? "border-[#f7f1e6]/60 hover:bg-[#f7f1e6]/14"
-                  : "border-[#1f281f]/30 hover:bg-[#1f281f]/10",
+                  ? "border-[#f8f3fc]/60 hover:bg-[#f8f3fc]/14"
+                  : "border-[#6e4d87]/30 hover:bg-[#6e4d87]/10",
               ].join(" ")}
               onClick={() => setIsMenuOpen((isOpen) => !isOpen)}
             >
@@ -157,7 +157,7 @@ export function TopNav({ tone = 'hero' }) {
               : "pointer-events-none max-h-0 pt-0 opacity-0",
           ].join(" ")}
         >
-          <div className="grid gap-3 rounded-2xl border border-[#d8cdbd] bg-[#f8f4ec] p-4 text-[#1f281f]">
+          <div className="grid gap-3 rounded-2xl border border-[#d9cbe8] bg-[#f6effb] p-4 text-[#6e4d87]">
             {routes.map((route) => (
               <NavItem
                 key={route.key}
@@ -170,7 +170,7 @@ export function TopNav({ tone = 'hero' }) {
             ))}
             <NavLink
               to="/bookings"
-              className="mt-1 inline-flex w-full items-center justify-center rounded-full border border-[#1f281f] bg-[#1f281f] px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-[#f7f1e6]! transition hover:bg-[#162016]"
+              className="mt-1 inline-flex w-full items-center justify-center rounded-full border border-[#6e4d87] bg-[#6e4d87] px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-[#f8f3fc]! transition hover:bg-[#5c3f73]"
               onClick={() => setIsMenuOpen(false)}
             >
               Book Now

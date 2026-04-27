@@ -13,7 +13,7 @@ function TreatmentBrochureItem({ service }) {
   return (
     <article
       data-float
-      className="flex h-full flex-col gap-4 rounded-[1.35rem] bg-[#fbf6ed] p-4 shadow-[0_16px_36px_-30px_rgba(24,30,22,0.56)]"
+      className="flex h-full flex-col gap-4 rounded-[1.35rem] bg-[#f9f3ff] p-4 shadow-[0_16px_36px_-30px_rgba(24,30,22,0.56)]"
     >
       <Link to={`/treatments/${service.slug}`} className="group block overflow-hidden rounded-[1rem]">
         <img
@@ -41,7 +41,7 @@ function TreatmentBrochureItem({ service }) {
       <div className="pt-1">
         <Link
           to={`/treatments/${service.slug}`}
-          className="inline-flex items-center justify-center rounded-full bg-[#1f281f] px-4 py-2 text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-[#f7f1e6] transition hover:bg-[#162016]"
+          className="inline-flex items-center justify-center rounded-full bg-[#6e4d87] px-4 py-2 text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-[#f8f3fc] transition hover:bg-[#5c3f73]"
         >
           Reserve
         </Link>
@@ -57,7 +57,7 @@ export function TreatmentsBrochurePairs({ services = [] }) {
   }))
 
   return (
-    <section data-ani-section className="space-y-5 rounded-[1.6rem] bg-[#f3ecdf] p-4 shadow-[0_22px_44px_-36px_rgba(17,23,16,0.62)] sm:p-6">
+    <section data-ani-section className="space-y-5 rounded-[1.6rem] bg-[#eee4f7] p-4 shadow-[0_22px_44px_-36px_rgba(17,23,16,0.62)] sm:p-6">
       <div className="space-y-1 text-center">
         <p data-ani-copy className="text-[0.72rem] uppercase tracking-[0.16em] text-[#5f584d]">
           Treatments

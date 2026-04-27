@@ -8,7 +8,7 @@ function DetailRow({ label, value }) {
 
   return (
     <p data-ani-copy className="text-[0.82rem] leading-[1.55] text-[#4f4a41]">
-      <span className="uppercase tracking-[0.05rem] text-[#1f281f]">{label}: </span>
+      <span className="uppercase tracking-[0.05rem] text-[#6e4d87]">{label}: </span>
       {value}
     </p>
   )
@@ -20,14 +20,14 @@ export function TreatmentMenuCards({ title, intro, treatments = [] }) {
     children: (
       <article
         data-float={index % 3 === 0 ? 'true' : undefined}
-        className="flex h-full flex-col gap-3 rounded-[1.25rem] bg-[#fdf9f2] p-4 shadow-[0_14px_30px_-28px_rgba(31,34,26,0.58)]"
+        className="flex h-full flex-col gap-3 rounded-[1.25rem] bg-[#fbf7ff] p-4 shadow-[0_14px_30px_-28px_rgba(31,34,26,0.58)]"
       >
         <h3 data-ani-heading className="text-[1.18rem] leading-tight text-[#171c16]">
           {t.title}
         </h3>
 
         {t.subtitle ? (
-          <p data-ani-copy className="text-[0.65rem] uppercase tracking-[0.12rem] text-[#8f7658]">
+          <p data-ani-copy className="text-[0.65rem] uppercase tracking-[0.12rem] text-[#9a80b0]">
             {t.subtitle}
           </p>
         ) : null}
@@ -43,7 +43,7 @@ export function TreatmentMenuCards({ title, intro, treatments = [] }) {
         <div className="mt-auto flex justify-between gap-4 pt-4">
           <div>
             <p className="text-[0.62rem] uppercase tracking-[0.08rem] text-[#6f675a]">Booking</p>
-            <p className="text-[0.86rem] leading-tight text-[#1f281f]">Online Reservation</p>
+            <p className="text-[0.86rem] leading-tight text-[#6e4d87]">Online Reservation</p>
           </div>
           <a href={t.bookingUrl} className={primaryButton}>
             {t.bookingLabel}
@@ -55,7 +55,7 @@ export function TreatmentMenuCards({ title, intro, treatments = [] }) {
 
   return (
     <section data-ani-section className="mx-auto w-full max-w-[1220px] px-3 sm:px-5 lg:px-0">
-      <div className="rounded-[1.6rem] bg-[#f4eee1] p-5 shadow-[0_22px_42px_-34px_rgba(22,26,19,0.56)] sm:p-7">
+      <div className="rounded-[1.6rem] bg-[#f1e8f8] p-5 shadow-[0_22px_42px_-34px_rgba(22,26,19,0.56)] sm:p-7">
         <div className="space-y-2">
           <h2 data-ani-heading className="text-[1.85rem] leading-[1.04] text-[#171c16] sm:text-[2.2rem]">
             {title}

@@ -33,7 +33,7 @@ export function TreatmentsPage() {
       <div className="mx-auto w-full max-w-[1220px] px-3 sm:px-5 lg:px-0">
         <section
           data-ani-section
-          className="space-y-4 rounded-[1.6rem] bg-[radial-gradient(circle_at_top,#f9f5ed_0%,#f1eadf_58%,#eee6d8_100%)] p-5 text-center shadow-[0_24px_48px_-36px_rgba(20,27,18,0.6)] sm:p-7"
+          className="space-y-4 rounded-[1.6rem] bg-[radial-gradient(circle_at_top,#f7f0fc_0%,#ece1f5_58%,#e9dcf2_100%)] p-5 text-center shadow-[0_24px_48px_-36px_rgba(20,27,18,0.6)] sm:p-7"
         >
           <p data-ani-copy className="text-[0.72rem] uppercase tracking-[0.16em] text-[#5f584d]">
             Treatments

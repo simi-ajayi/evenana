@@ -6,11 +6,11 @@ export function ContentHighlights({ items = [] }) {
     children: (
       <article
         data-float={index % 3 === 0 ? 'true' : undefined}
-        className="rounded-[1.3rem] bg-[#f8f2e7] px-4 py-4 shadow-[0_14px_36px_-30px_rgba(29,35,26,0.58)] sm:px-5"
+        className="rounded-[1.3rem] bg-[#f5edf9] px-4 py-4 shadow-[0_14px_36px_-30px_rgba(29,35,26,0.58)] sm:px-5"
       >
         <p
           data-ani-copy
-          className="text-[0.88rem] leading-[1.62] text-[#2f332d] before:mr-3 before:text-[#8f7658] before:content-['•']"
+          className="text-[0.88rem] leading-[1.62] text-[#2f332d] before:mr-3 before:text-[#9a80b0] before:content-['•']"
         >
           {item}
         </p>
@@ -21,7 +21,7 @@ export function ContentHighlights({ items = [] }) {
   return (
     <section
       data-ani-section
-      className="rounded-[1.6rem] bg-[radial-gradient(circle_at_top,#f9f5ed_0%,#f2ebdf_55%,#eee5d6_100%)] p-5 shadow-[0_24px_44px_-38px_rgba(17,23,16,0.62)] sm:p-7"
+      className="rounded-[1.6rem] bg-[radial-gradient(circle_at_top,#f7f0fc_0%,#efe6f7_55%,#e8daf1_100%)] p-5 shadow-[0_24px_44px_-38px_rgba(17,23,16,0.62)] sm:p-7"
     >
       <p data-ani-copy className="text-[0.72rem] uppercase tracking-[0.16em] text-[#5f584d]">
         Highlights

@@ -25,7 +25,7 @@ export function PageHero({ hero }) {
   return (
     <section
       data-ani-section
-      className="relative h-[95vh] overflow-hidden border border-[#d6cdc1] bg-[#233125] text-[#f4efe6] md:rounded-4xl"
+      className="relative h-[95vh] overflow-hidden border border-[#dacdea] bg-[#5a3d72] text-[#f7f2fc] md:rounded-4xl"
     >
       <img
         data-ani-image
@@ -64,7 +64,7 @@ export function PageHero({ hero }) {
             {hero?.description ? (
               <p
                 data-hero-copy
-                className="max-w-[30rem] text-center md:text-left text-[0.9rem] leading-[1.6] text-[#eee7db]/92 sm:text-[1.35rem]"
+                className="max-w-[30rem] text-center md:text-left text-[0.9rem] leading-[1.6] text-[#eadff4]/92 sm:text-[1.35rem]"
               >
                 {hero.description}
               </p>
@@ -72,12 +72,12 @@ export function PageHero({ hero }) {
 
             <div className="mt-8 justify-center flex flex-wrap items-center gap-3">
               <Link data-hero-cta to={primaryCta.to}>
-                <div className="rounded-full bg-[#f4efe6] px-7 py-3 text-[0.95rem] font-semibold uppercase tracking-[0.14em] text-[#172017] transition hover:-translate-y-0.5 hover:bg-white">
+                <div className="rounded-full bg-[#f7f2fc] px-7 py-3 text-[0.95rem] font-semibold uppercase tracking-[0.14em] text-[#4f365f] transition hover:-translate-y-0.5 hover:bg-white">
                   {primaryCta.label}
                 </div>{" "}
               </Link>
               <Link data-hero-cta to={secondaryCta.to}>
-                <div className="rounded-full border border-[#f4eee2]/50 px-7 py-3 text-[0.95rem] font-semibold uppercase tracking-[0.14em] text-[#f0e8dc] transition hover:bg-[#f4eee2]/10">
+                <div className="rounded-full border border-[#f1e8f8]/50 px-7 py-3 text-[0.95rem] font-semibold uppercase tracking-[0.14em] text-[#ece0f6] transition hover:bg-[#f1e8f8]/10">
                   {secondaryCta.label}
                 </div>{" "}
               </Link>

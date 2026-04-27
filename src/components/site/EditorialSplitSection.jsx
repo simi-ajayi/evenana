@@ -23,7 +23,7 @@ export function EditorialSplitSection({ section, reverse = false }) {
     children: (
       <article
         data-float
-        className="flex min-h-[21rem] flex-col justify-center rounded-[1.55rem] bg-[#f9f4ea] p-5 shadow-[0_20px_42px_-34px_rgba(23,28,20,0.56)] sm:p-7"
+        className="flex min-h-[21rem] flex-col justify-center rounded-[1.55rem] bg-[#f7f0fc] p-5 shadow-[0_20px_42px_-34px_rgba(23,28,20,0.56)] sm:p-7"
       >
         <p data-ani-copy className="text-[0.7rem] uppercase tracking-[0.16em] text-[#5f584d]">
           {section.eyebrow}
@@ -41,7 +41,7 @@ export function EditorialSplitSection({ section, reverse = false }) {
   const masonryItems = reverse ? [contentItem, imageItem] : [imageItem, contentItem]
 
   return (
-    <section data-ani-section className="rounded-[1.6rem] bg-[#f4eee2] p-3 shadow-[0_20px_44px_-38px_rgba(17,23,16,0.58)] sm:p-4">
+    <section data-ani-section className="rounded-[1.6rem] bg-[#f1e8f8] p-3 shadow-[0_20px_44px_-38px_rgba(17,23,16,0.58)] sm:p-4">
       <Masonry fresh columns={{ xs: 1, md: 2 }} gutter={{ xs: 12, sm: 14, md: 16 }} items={masonryItems} />
     </section>
   )

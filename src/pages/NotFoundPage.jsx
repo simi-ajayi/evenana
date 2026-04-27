@@ -6,7 +6,7 @@ export function NotFoundPage() {
   return (
     <FadeIn
       as="section"
-      className="mx-auto my-8 w-[min(94%,920px)] rounded-[1.6rem] border border-[#d9d0c3] bg-[#f8f5ef] p-8 text-center md:p-10"
+      className="mx-auto my-8 w-[min(94%,920px)] rounded-[1.6rem] border border-[#d9cbe8] bg-[#f8f4fc] p-8 text-center md:p-10"
       duration={0.4}
     >
       <p className="text-[0.72rem] uppercase tracking-[0.16em] text-[#5f584d]">Route not found</p>
