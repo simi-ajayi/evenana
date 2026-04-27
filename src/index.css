@@ -3,19 +3,37 @@
 
 html {
   font-size: 13px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  background: #eae8e2;
+  color: #151912;
+  font-family: gt-america, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 :root {
-  --app-bg: #08261E;
-  --app-surface: #f6f5f4;
-  --app-surface-strong: #ede9e2;
-  --app-text: #1f1d19;
-  --app-muted: #60594e;
-  --app-border: #d8d5cf;
-  --app-primary: #07261e;
-  --app-primary-contrast: #f6f5f4;
-  --app-secondary: #9d7a56;
-  --app-accent: #15382f;
+  --app-bg: #eae8e2;
+  --app-surface: #f8f5ef;
+  --app-surface-strong: #f2ede4;
+  --app-text: #151912;
+  --app-muted: #565046;
+  --app-border: #d8cebf;
+  --app-primary: #1f281f;
+  --app-primary-contrast: #f7f1e6;
+  --app-secondary: #8f7658;
+  --app-accent: #2e4a3d;
 }
 
 :root.dark {
@@ -33,7 +51,6 @@ html {
 
 @theme inline {
   --font-body: gt-america, sans-serif;
-  --font-display: ivyora-display, serif;
   --color-bg: var(--app-bg);
   --color-surface: var(--app-surface);
   --color-surface-strong: var(--app-surface-strong);
@@ -44,4 +61,37 @@ html {
   --color-primary-contrast: var(--app-primary-contrast);
   --color-secondary: var(--app-secondary);
   --color-accent: var(--app-accent);
+}
+
+.top-services-marquee {
+  overflow: hidden;
+}
+
+.top-services-marquee-track {
+  animation: top-services-marquee-scroll 26s linear infinite;
+  will-change: transform;
+}
+
+.top-services-marquee:hover .top-services-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes top-services-marquee-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .top-services-marquee {
+    overflow-x: auto;
+  }
+
+  .top-services-marquee-track {
+    animation: none;
+  }
 }

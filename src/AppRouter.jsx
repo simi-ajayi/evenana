@@ -1,5 +1,6 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { SiteLayout } from './components/layout/SiteLayout'
+import { BookingsPage } from './pages/BookingsPage'
 import { DaySpaPage } from './pages/DaySpaPage'
 import { GiftingPage } from './pages/GiftingPage'
 import { HomePage } from './pages/HomePage'
@@ -15,6 +16,7 @@ export function AppRouter() {
       <Routes>
         <Route element={<SiteLayout />}>
           <Route path="/" element={<HomePage />} />
+          <Route path="/bookings" element={<BookingsPage />} />
           <Route path="/treatments" element={<TreatmentsPage />} />
           <Route path="/treatments/:slug" element={<ServicePage />} />
           <Route path="/day-spa" element={<DaySpaPage />} />

@@ -1,14 +1,16 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { BrochureTextBlock } from '../components/brochure/BrochureTextBlock'
+import { TreatmentMenuCards } from '../components/brochure/TreatmentMenuCards'
 import { primaryButton, secondaryButton } from '../components/site/buttonStyles'
 import { FadeIn } from '../components/site/FadeIn'
 import { getServiceContent, getServiceNeighbors } from '../lib/brochureParser'
+import { TopNav } from '../components/navigation/TopNav'
 
 function NeighborNav({ slug }) {
   const { previous, next } = getServiceNeighbors(slug)
 
   return (
-    <FadeIn as="div" className="mt-6 flex flex-wrap gap-3" duration={0.4} delay={0.12}>
+    <FadeIn as="div" className="mx-auto mt-2 flex w-full max-w-[1220px] flex-wrap gap-3 px-3 sm:px-5 lg:px-0" duration={0.35}>
       {previous ? (
         <Link to={`/treatments/${previous.slug}`} className={secondaryButton}>
           Previous: {previous.navLabel}
@@ -40,41 +42,39 @@ export function ServicePage() {
       fade={false}
       scaleFrom={1}
     >
-      <FadeIn
-        as="section"
-        className="relative -mx-4 min-h-[34rem] overflow-hidden border border-border sm:-mx-6 lg:-mx-8"
-        delay={0.05}
-        duration={0.45}
-      >
-        <img src={service.image} alt={service.title} className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/20" />
+      <section className="mx-auto w-full max-w-[1220px] px-3 pt-3 sm:px-5 sm:pt-5 lg:px-0 lg:pt-7">
+        <FadeIn
+          as="section"
+          className="relative min-h-[28rem] overflow-hidden rounded-[2rem] border border-[#d8cebf]"
+          delay={0.04}
+          duration={0.42}
+        >
+          <img src={service.image} alt={service.title} className="absolute inset-0 h-full w-full object-cover" />
+          <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(8,15,10,0.9)_18%,rgba(8,15,10,0.5)_58%,rgba(8,15,10,0.82)_100%)]" />
 
-        <div className="relative z-10 mx-auto flex min-h-[inherit] w-full mt-32 max-w-[1440px] items-end px-4 py-12 md:px-8 md:py-16">
-          <div className="space-y-3">
-            <p className="font-body text-[1.2rem] uppercase tracking-[0.06rem] text-white/85">
-              {service.menuHeading}
-            </p>
-            <h1 className="max-w-[90rem] font-display text-[clamp(4rem,5.6vw,7rem)] leading-[0.92] text-white">
-              {service.title}
-            </h1>
-            <p className="max-w-[75rem] text-[1.9rem] leading-[2.9rem] text-white/90">{service.intro}</p>
-            <div className="pt-2">
-              <Link to="/treatments" className={primaryButton}>
-                Back to treatments
-              </Link>
+          <TopNav />
+          <div className="relative z-10 flex min-h-[inherit] w-full items-end px-5 pb-10 pt-24 sm:px-7 sm:pb-12 sm:pt-28">
+            <div className="space-y-3">
+              <p className="text-[0.7rem] uppercase tracking-[0.16em] text-white/82">{service.menuHeading}</p>
+              <h1 className="max-w-[54rem] text-[clamp(2rem,5.3vw,4.6rem)] leading-[0.92] text-white">{service.title}</h1>
+              <p className="max-w-[42rem] text-[0.9rem] leading-[1.62] text-white/92">{service.intro}</p>
+              <div className="pt-2">
+                <Link to="/treatments" className={primaryButton}>
+                  Back to treatments
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-      </FadeIn>
+        </FadeIn>
+      </section>
 
-      <BrochureTextBlock title={`${service.title} Menu`} content={service.menuContent} />
+      {service.treatmentCards?.length > 0 ? (
+        <TreatmentMenuCards title={`${service.title} Menu`} intro={service.intro} treatments={service.treatmentCards} />
+      ) : (
+        <BrochureTextBlock title={`${service.title} Menu`} content={service.menuContent} />
+      )}
 
-      {service.aftercareContent ? (
-        <BrochureTextBlock
-          title={`${service.title} Aftercare`}
-          content={service.aftercareContent}
-        />
-      ) : null}
+      {service.aftercareContent ? <BrochureTextBlock title={`${service.title} Aftercare`} content={service.aftercareContent} /> : null}
 
       <NeighborNav slug={slug} />
     </FadeIn>

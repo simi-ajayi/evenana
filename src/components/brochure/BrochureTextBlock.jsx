@@ -13,10 +13,7 @@ function renderBulletList(lines, key) {
   return (
     <ul key={key} className="grid gap-2">
       {lines.map((line, index) => (
-        <li
-          key={index}
-          className="text-xl leading-[2.6rem] text-muted before:mr-4 before:text-secondary before:content-['•']"
-        >
+        <li key={index} className="text-[0.9rem] leading-[1.62] text-[#4f4a41] before:mr-3 before:text-[#8f7658] before:content-['•']">
           {line.replace(/^•\s*/, '')}
         </li>
       ))}
@@ -37,14 +34,14 @@ function renderBlock(block, index) {
 
   if (lines.length === 1 && isHeading(lines[0])) {
     return (
-      <h3 key={index} className="font-display underline-offset-2 underline text-3xl leading-[1] text-text">
+      <h3 key={index} className="text-[1.35rem] leading-[1.08] text-[#171c16] underline underline-offset-2 sm:text-[1.55rem]">
         {lines[0]}
       </h3>
     )
   }
 
   return (
-    <p key={index} className="whitespace-pre-line text-xl leading-[2.6rem] text-muted">
+    <p key={index} className="whitespace-pre-line text-[0.9rem] leading-[1.65] text-[#4f4a41]">
       {lines.join('\n')}
     </p>
   )
@@ -57,29 +54,20 @@ export function BrochureTextBlock({ title, content }) {
     .filter(Boolean)
 
   return (
-    <FadeIn as="section" className="  p-6 md:p-28" duration={0.5}>
-      <div className='bg-surface p-20'>
-        <h2 className="font-display text-6xl w-full leading-[0.95] text-text">
-          {title}
-        </h2>
-   <div className="mt-6 grid gap-3">
-  {blocks.map((block, index) => (
-    <FadeIn key={index} as="div" delay={0.05 + index * 0.05} duration={0.35}>
-      <div className="group relative overflow-hidden  bg-surface px-6  transition-all duration-200 hover:translate-x-0.5 hover:border-secondary hover:bg-surface-strong">
-  
-        <span className="absolute inset-y-0 left-0 w-[3px] origin-bottom scale-y-0 bg-secondary transition-transform duration-200 group-hover:scale-y-100" />
-
-        {/* Index badge */}
-        {/* <span className="absolute right-5 top-5 font-mono text-[10px] tracking-wide text-muted">
-          {String(index + 1).padStart(2, '0')}
-        </span> */}
-
-        {renderBlock(block, index)}
+    <FadeIn as="section" className="mx-auto w-full max-w-[1220px] px-3 sm:px-5 lg:px-0" duration={0.45}>
+      <div className="rounded-[1.6rem] border border-[#d9d0c3] bg-[#f8f5ef] p-5 sm:p-7">
+        <h2 className="text-[1.85rem] leading-[1.04] text-[#171c16] sm:text-[2.2rem]">{title}</h2>
+        <div className="mt-5 grid gap-3">
+          {blocks.map((block, index) => (
+            <FadeIn key={index} as="div" delay={0.04 + index * 0.04} duration={0.32}>
+              <div className="group relative overflow-hidden rounded-xl border border-[#d7ccbc] bg-[#fdfaf4] px-4 py-3 transition-all duration-200 hover:border-[#b39570]">
+                <span className="absolute inset-y-0 left-0 w-[3px] origin-bottom scale-y-0 bg-[#8f7658] transition-transform duration-200 group-hover:scale-y-100" />
+                {renderBlock(block, index)}
+              </div>
+            </FadeIn>
+          ))}
+        </div>
       </div>
     </FadeIn>
-  ))}
-</div>
-      </div>
-    </FadeIn>
-  );
+  )
 }

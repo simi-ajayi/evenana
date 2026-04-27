@@ -29,24 +29,24 @@ export function TreatmentsPage() {
     >
       <PageHero hero={content.hero} compact />
 
-      <div className="mx-auto w-full max-w-[1080px] px-4 md:px-6 lg:px-0">
+      <div className="mx-auto w-full max-w-[1220px] px-3 sm:px-5 lg:px-0">
         <FadeIn
           as="section"
-          className="space-y-5 bg-surface py-3 mb-20 text-center md:py-6"
-          delay={0.06}
-          duration={0.4}
+          className="space-y-4 rounded-[1.6rem] border border-[#d9d0c3] bg-[#f8f5ef] p-5 text-center sm:p-7"
+          delay={0.05}
+          duration={0.38}
           triggerOnScroll={false}
           fade={false}
           scaleFrom={1}
-         >
-          <p className=" text-[1.2rem] uppercase tracking-[0.12rem] text-primary">Treatments</p>
-          <h2 className="text-5xl leading-[0.94] text-primary">
-            Explore treatment categories
-          </h2>
-          <p className="mx-auto max-w-[78rem] text-[1.8rem] leading-[2.8rem] text-primary">{content.lead}</p>
+        >
+          <p className="text-[0.72rem] uppercase tracking-[0.16em] text-[#5f584d]">Treatments</p>
+          <h2 className="text-[1.95rem] leading-[1.04] text-[#171c16] sm:text-[2.35rem]">Explore treatment categories</h2>
+          <p className="mx-auto max-w-[64rem] text-[0.94rem] leading-[1.62] text-[#4f4a41]">{content.lead}</p>
         </FadeIn>
 
-        <TreatmentsBrochurePairs services={services} />
+        <div className="mt-7">
+          <TreatmentsBrochurePairs services={services} />
+        </div>
       </div>
     </FadeIn>
   )

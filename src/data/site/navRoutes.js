@@ -6,12 +6,12 @@ export const navRoutes = [
   },
   {
     path: '/day-spa',
-    label: 'Day spa',
+    label: 'Day Spa',
     key: 'daySpa',
   },
   {
     path: '/wellbeing-spaces',
-    label: 'wellbeing spaces',
+    label: 'Wellbeing Spaces',
     key: 'wellbeingSpaces',
   },
   {
@@ -21,7 +21,7 @@ export const navRoutes = [
   },
   {
     path: '/gifting',
-    label: 'gifting',
+    label: 'Gifting',
     key: 'gifting',
   },
 ]

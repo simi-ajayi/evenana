@@ -1,28 +1,28 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import logo from '../../assets/clearlogo.png'
 import { navRoutes } from '../../data/site/navRoutes'
-import { FadeIn } from '../site/FadeIn'
-import Logo from '../../assets/clearlogo.png'
+import brandWordmark from "../../assets/evenana_white_text.png";
 
-const navTextClass = 'font-body text-[1.2rem] uppercase tracking-[0.06rem]'
-const containerClass = 'mx-auto w-full max-w-[1440px] px-4 md:px-8'
-const bookButtonClassTransparent =
-  'md:inline-flex hidden items-center justify-center border border-primary-contrast px-4 py-2 font-body text-[1.2rem] uppercase tracking-[0.06rem] text-primary-contrast transition-colors hover:bg-transparent hover:text-primary-contrast'
-const bookButtonClassScrolled =
-  'md:inline-flex hidden items-center justify-center border border-primary bg-transparent px-4 py-2 font-body text-[1.2rem] uppercase tracking-[0.06rem] text-primary transition-colors hover:bg-primary hover:text-primary-contrast'
 
-function NavItem({ to, label, isSolidBackground, onSelect, className = '' }) {
-  const activeTextClass = isSolidBackground ? 'text-primary' : 'text-primary-contrast'
-  const inactiveTextClass = isSolidBackground
-    ? 'text-primary/72 hover:text-primary'
-    : 'text-primary-contrast/72 hover:text-primary-contrast'
+const navTextClass = 'font-body text-md uppercase tracking-[0.14em]'
+
+function NavItem({ to, label, onSelect, isHeroTone, className = '' }) {
+  const activeTextClass = isHeroTone ? 'text-[#f7f1e6]' : 'text-[#1f281f]'
+  const inactiveTextClass = isHeroTone ? 'text-[#f7f1e6]/78 hover:text-[#f7f1e6]' : 'text-[#1f281f]/72 hover:text-[#1f281f]'
+  const activeUnderlineClass = isHeroTone ? 'after:bg-[#f7f1e6]' : 'after:bg-[#1f281f]'
 
   return (
     <NavLink
       to={to}
       onClick={onSelect}
       className={({ isActive }) =>
-        [navTextClass, className, isActive ? activeTextClass : inactiveTextClass]
+        [
+          navTextClass,
+          'relative pb-1 transition-colors after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:transition-transform after:duration-300',
+          className,
+          isActive ? `${activeTextClass} ${activeUnderlineClass} after:scale-x-100` : inactiveTextClass,
+        ]
           .filter(Boolean)
           .join(' ')
       }
@@ -32,18 +32,10 @@ function NavItem({ to, label, isSolidBackground, onSelect, className = '' }) {
   )
 }
 
-export function TopNav() {
-  const [isScrolled, setIsScrolled] = useState(false)
+export function TopNav({ tone = 'hero' }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return
-
-    const onScroll = () => setIsScrolled(window.scrollY > 20)
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+  const routes = useMemo(() => [{ path: '/', label: 'Home', key: 'home' }, ...navRoutes], [])
+  const isHeroTone = tone === 'hero'
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -65,69 +57,82 @@ export function TopNav() {
     return () => window.removeEventListener('keydown', onKeyDown)
   }, [])
 
-  const hasSolidBackground = isScrolled || isMenuOpen
-  const bookButtonClass = hasSolidBackground ? bookButtonClassScrolled : bookButtonClassTransparent
-  const headerTextClass = hasSolidBackground ? 'text-primary' : 'text-primary-contrast'
-  const headerBorderClass = hasSolidBackground ? 'border-primary/20' : 'border-transparent'
-  const topRowBorderClass = hasSolidBackground ? 'border-primary/20' : 'border-primary-contrast'
-  const menuButtonClass = hasSolidBackground
-    ? 'border-primary/30 hover:bg-primary/5'
-    : 'border-primary-contrast/60 hover:bg-primary-contrast/10'
-
   return (
-    <FadeIn
-      as="header"
-      className={[
-        'fixed left-1/2 top-4 z-50 w-[92%] -translate-x-1/2 border-b transition-colors md:w-[90%]',
-        headerBorderClass,
-        hasSolidBackground ? 'bg-surface dark:bg-bg' : 'bg-transparent',
-        headerTextClass,
-      ].join(' ')}
-      duration={0.2}
-    >
-      <div className={`${containerClass} py-4 md:py-5`}>
+    <header className="absolute inset-x-0 top-0 z-30">
+      <div className="mx-auto w-full  px-4 md:px-7">
         <div
           className={[
-            'flex items-center justify-between gap-4 border-b pb-3',
-            topRowBorderClass,
-          ].join(' ')}
+            "flex items-center justify-between gap-4  py-4 md:py-5",
+            isHeroTone
+              ? "border-[#f7f1e6]/32 text-[#f7f1e6]"
+              : "border-[#cfc4b2] text-[#1f281f]",
+          ].join(" ")}
         >
-          <div className="flex items-center gap-4">
-            <NavLink to="/" className="inline-flex items-center" onClick={() => setIsMenuOpen(false)}>
-              <img src={Logo} alt="EVENANA" className="h-36 w-36 sm:h-12 md:h-48 md:w-48 mt-4 absolute" />
-            </NavLink>
+          <NavLink
+            to="/"
+            className="inline-flex items-center gap-3"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <img src={logo} alt="Evenana" className="w-40 h-40 absolute mt-8" />
+            <img
+              data-ani-image
+              src={brandWordmark}
+              alt="Evenana"
+              className="h-40 w-auto ml-30    absolute"
+            />
+          </NavLink>
+
+          <div className="hidden items-center gap-4 ml-52 md:flex lg:gap-5">
+            {routes.map((route) => (
+              <NavItem
+                key={route.key}
+                to={route.path}
+                label={route.label}
+                isHeroTone={isHeroTone}
+              />
+            ))}
           </div>
 
           <div className="flex items-center gap-2">
             <NavLink
-              to="/treatments"
-              className={`${bookButtonClass} hidden md:inline-flex`}
+              to="/bookings"
+              className={[
+                "hidden items-center justify-center text-[#1f281f]! rounded-full border px-5 py-2 text-md font-semibold uppercase tracking-[0.14em] transition-colors md:inline-flex",
+                isHeroTone
+                  ? "border-[#f7f1e6] bg-[#f7f1e6]  hover:bg-white"
+                  : "border-[#1f281f] bg-[#1f281f]  hover:bg-[#162016]",
+              ].join(" ")}
               onClick={() => setIsMenuOpen(false)}
             >
-              Book now
+              Book Now
             </NavLink>
+
             <button
               type="button"
               aria-controls="topnav-mobile-menu"
               aria-expanded={isMenuOpen}
-              aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              aria-label={
+                isMenuOpen ? "Close navigation menu" : "Open navigation menu"
+              }
               className={[
-                'flex h-10 w-10 flex-col items-center justify-center gap-1.5 border transition-colors md:hidden',
-                menuButtonClass,
-              ].join(' ')}
+                "flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-full border transition-colors md:hidden",
+                isHeroTone
+                  ? "border-[#f7f1e6]/60 hover:bg-[#f7f1e6]/14"
+                  : "border-[#1f281f]/30 hover:bg-[#1f281f]/10",
+              ].join(" ")}
               onClick={() => setIsMenuOpen((isOpen) => !isOpen)}
             >
               <span
                 className={[
-                  'h-px w-5 bg-current transition-transform duration-300',
-                  isMenuOpen ? 'translate-y-[3px] rotate-45' : '',
-                ].join(' ')}
+                  "h-px w-5 bg-current transition-transform duration-300",
+                  isMenuOpen ? "translate-y-[3px] rotate-45" : "",
+                ].join(" ")}
               />
               <span
                 className={[
-                  'h-px w-5 bg-current transition-transform duration-300',
-                  isMenuOpen ? '-translate-y-[3px] -rotate-45' : '',
-                ].join(' ')}
+                  "h-px w-5 bg-current transition-transform duration-300",
+                  isMenuOpen ? "-translate-y-[3px] -rotate-45" : "",
+                ].join(" ")}
               />
             </button>
           </div>
@@ -136,43 +141,33 @@ export function TopNav() {
         <nav
           id="topnav-mobile-menu"
           className={[
-            'overflow-hidden transition-[max-height,opacity,padding] duration-300 md:hidden',
-            isMenuOpen ? 'max-h-[28rem] pt-3 opacity-100' : 'pointer-events-none max-h-0 pt-0 opacity-0',
-          ].join(' ')}
+            "overflow-hidden transition-[max-height,opacity,padding] duration-300 md:hidden",
+            isMenuOpen
+              ? "max-h-[28rem] pt-4 opacity-100"
+              : "pointer-events-none max-h-0 pt-0 opacity-0",
+          ].join(" ")}
         >
-          <div className="flex flex-col items-start gap-3 pb-2">
-            {navRoutes.map((route) => (
+          <div className="grid gap-3 rounded-2xl border border-[#d8cdbd] bg-[#f8f4ec] p-4 text-[#1f281f]">
+            {routes.map((route) => (
               <NavItem
-                key={route.path}
+                key={route.key}
                 to={route.path}
                 label={route.label}
-                isSolidBackground={hasSolidBackground}
+                isHeroTone={false}
                 onSelect={() => setIsMenuOpen(false)}
-                className="block w-full py-1"
+                className="w-fit"
               />
             ))}
-            <NavLink to="/treatments" className={`${bookButtonClass} mt-2 w-full`} onClick={() => setIsMenuOpen(false)}>
-              Book now
+            <NavLink
+              to="/bookings"
+              className="mt-1 inline-flex w-full items-center justify-center rounded-full border border-[#1f281f] bg-[#1f281f] px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-[#f7f1e6] transition hover:bg-[#162016]"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Book Now
             </NavLink>
           </div>
         </nav>
-
-        <nav
-          className={[
-            'mx-auto hidden flex-wrap items-center justify-center gap-x-5 gap-y-2 pt-3 md:flex',
-            hasSolidBackground ? 'text-primary' : 'text-primary-contrast',
-          ].join(' ')}
-        >
-          {navRoutes.map((route) => (
-            <NavItem
-              key={route.path}
-              to={route.path}
-              label={route.label}
-              isSolidBackground={hasSolidBackground}
-            />
-          ))}
-        </nav>
       </div>
-    </FadeIn>
-  )
+    </header>
+  );
 }

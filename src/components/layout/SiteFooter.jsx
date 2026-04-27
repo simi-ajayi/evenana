@@ -1,41 +1,56 @@
 import { Link } from 'react-router-dom'
+import footerWordmark from '../../assets/evenanawhitefull.png'
+import spa04 from '../../assets/spa/spa-04.jpg'
 import { navRoutes } from '../../data/site/navRoutes'
 import { FadeIn } from '../site/FadeIn'
 
+const footerRoutes = [{ path: '/', label: 'Home', key: 'home' }, ...navRoutes, { path: '/bookings', label: 'Booking', key: 'booking' }]
+
 export function SiteFooter() {
   return (
-    <FadeIn as="footer" className="mt-10 border-t w-full border-border bg-surface" duration={0.5} delay={0.05}>
-      <div className="grid w-full gap-8 px-4 py-10 md:grid-cols-3 md:gap-10 md:px-8 md:py-14">
-        <section className="space-y-3">
-          <p className="font-body text-[1.2rem] uppercase tracking-[0.06rem] text-muted">Contact us</p>
-          <h2 className="font-display text-[2rem] leading-[0.96] text-text">EVENANA MedSpa</h2>
-          <p className="text-[1rem] text-muted">+44 (0) 20 7321 3050</p>
-          <p className="text-[1.7rem] text-muted"></p>
-          <p className="text-[1.7rem] text-muted"></p>
+    <FadeIn as="footer" className="relative mt-4 w-full overflow-hidden border-t border-[#304133] bg-[#141b14] text-[#efe9dc]" duration={0.4}>
+      <img src={spa04} alt="Aromatherapy" className="absolute inset-0 h-full w-full object-cover opacity-20" />
+      <div className="relative z-10 mx-auto grid w-full max-w-[1220px] gap-8 px-4 py-9 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
+        <section>
+          <img src={footerWordmark} alt="Evenana" className="h-20 w-auto" />
+          <p className="mt-2 max-w-[17rem] text-[0.74rem] leading-[1.7] text-[#d0c7b8]">
+            Personalized spa experiences with premium care and intentional rituals for body, skin, and mind.
+          </p>
         </section>
 
-        <section className="space-y-3">
-          <p className=" text-[1.2rem] uppercase tracking-[0.06rem] text-muted">Opening hours</p>
-          <div className="space-y-2 text-[1.2rem] text-muted">
-            <p>Spa: 7:00am - 9:00pm</p>
-            <p>Treatments: 10:00am - 8:00pm</p>
-            <p>Gym: Accessible 24/7 for guests</p>
-          </div>
-        </section>
-
-        <section className="space-y-3">
-          <p className="font-body text-[1.2rem] uppercase tracking-[0.06rem] text-muted">Explore</p>
-          <div className="grid gap-2 text-[1.2rem] text-muted">
-            <Link to="/" className=" transition-colors hover:text-primary">
-              Home
-            </Link>
-            {navRoutes.map((route) => (
-              <Link key={route.path} to={route.path} className=" transition-colors hover:text-primary">
-                {route.label}
-              </Link>
+        <section>
+          <p className="text-[0.74rem] uppercase tracking-[0.15em] text-[#d0c6b4]">Company</p>
+          <ul className="mt-3 space-y-2 text-[0.83rem] text-[#efe9dd]">
+            {footerRoutes.map((route) => (
+              <li key={route.key}>
+                <Link to={route.path} className="transition hover:text-white">
+                  {route.label}
+                </Link>
+              </li>
             ))}
-          </div>
+          </ul>
         </section>
+
+        <section>
+          <p className="text-[0.74rem] uppercase tracking-[0.15em] text-[#d0c6b4]">Contact</p>
+          <ul className="mt-3 space-y-2 text-[0.83rem] text-[#efe9dd]">
+            <li>Phone: +1 (555) 216-4202</li>
+            <li>Email: hello@evenana.com</li>
+            <li>11 Wellness Avenue, Lagos</li>
+          </ul>
+        </section>
+
+        <section>
+          <p className="text-[0.74rem] uppercase tracking-[0.15em] text-[#d0c6b4]">Policy</p>
+          <ul className="mt-3 space-y-2 text-[0.83rem] text-[#efe9dd]">
+            <li>Privacy</li>
+            <li>Terms</li>
+            <li>Cancellation</li>
+          </ul>
+        </section>
+      </div>
+      <div className="relative z-10 mx-auto w-full max-w-[1220px] border-t border-[#4a574a] px-4 py-3 text-[0.71rem] uppercase tracking-[0.12em] text-[#c2b8a8] sm:px-6 lg:px-8">
+        © Copyright 2026. All rights reserved by EVENANA
       </div>
     </FadeIn>
   )
