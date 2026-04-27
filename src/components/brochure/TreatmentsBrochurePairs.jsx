@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { FadeIn } from '../site/FadeIn'
+import { Masonry } from 'antd'
 
 const sectionLabelByLeadSlug = {
   facials: 'Wildsmith Facials',
@@ -9,21 +9,15 @@ const sectionLabelByLeadSlug = {
   'massage-therapy': 'Massage, Waxing & Artistry',
 }
 
-function groupInPairs(items) {
-  const grouped = []
-
-  for (let index = 0; index < items.length; index += 2) {
-    grouped.push(items.slice(index, index + 2))
-  }
-
-  return grouped
-}
-
 function TreatmentBrochureItem({ service }) {
   return (
-    <article className="flex h-full flex-col gap-4 rounded-[1.2rem] border border-[#d7ccbc] bg-[#fbf8f3] p-4">
+    <article
+      data-float
+      className="flex h-full flex-col gap-4 rounded-[1.35rem] bg-[#fbf6ed] p-4 shadow-[0_16px_36px_-30px_rgba(24,30,22,0.56)]"
+    >
       <Link to={`/treatments/${service.slug}`} className="group block overflow-hidden rounded-[1rem]">
         <img
+          data-ani-image
           src={service.image}
           alt={service.title}
           className="h-[16rem] w-full object-cover transition-transform duration-700 group-hover:scale-[1.04] md:h-[18rem]"
@@ -31,14 +25,21 @@ function TreatmentBrochureItem({ service }) {
         />
       </Link>
 
-      <h3 className="text-[1.6rem] leading-[1.06] text-[#171c16]">{service.title}</h3>
+      <p className="text-[0.68rem] uppercase tracking-[0.16em] text-[#6f6557]">
+        {sectionLabelByLeadSlug[service.slug] ?? 'Treatment'}
+      </p>
+      <h3 data-ani-heading className="text-[1.6rem] leading-[1.06] text-[#171c16]">
+        {service.title}
+      </h3>
 
-      <p className="text-[0.9rem] leading-[1.6] text-[#4f4a41]">{service.intro}</p>
+      <p data-ani-copy className="text-[0.9rem] leading-[1.6] text-[#4f4a41]">
+        {service.intro}
+      </p>
 
       <div className="pt-1">
         <Link
           to={`/treatments/${service.slug}`}
-          className="inline-flex items-center justify-center rounded-full border border-[#1f281f] px-4 py-2 text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-[#1f281f] transition hover:bg-[#1f281f] hover:text-[#f7f1e6]"
+          className="inline-flex items-center justify-center rounded-full bg-[#1f281f] px-4 py-2 text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-[#f7f1e6] transition hover:bg-[#162016]"
         >
           Reserve
         </Link>
@@ -48,36 +49,27 @@ function TreatmentBrochureItem({ service }) {
 }
 
 export function TreatmentsBrochurePairs({ services = [] }) {
-  const servicePairs = groupInPairs(services)
+  const items = services.map((service) => ({
+    key: service.slug,
+    children: <TreatmentBrochureItem service={service} />,
+  }))
 
   return (
-    <section className="space-y-6 md:space-y-7">
-      {servicePairs.map((pair, pairIndex) => (
-        <FadeIn
-          key={pair[0]?.slug ?? pairIndex}
-          as="section"
-          className="space-y-5 rounded-[1.6rem] border border-[#d9d0c3] bg-[#f8f5ef] p-5 sm:p-7"
-          delay={0.04 + pairIndex * 0.04}
-          duration={0.35}
-          triggerOnScroll={false}
-          fade={false}
-          scaleFrom={1}
-        >
-          <div className="space-y-1 text-center">
-            <p className="text-[0.72rem] uppercase tracking-[0.16em] text-[#5f584d]">Treatments</p>
-            <h3 className="text-[1.65rem] leading-[1.04] text-[#171c16] sm:text-[1.95rem]">
-              {sectionLabelByLeadSlug[pair[0]?.slug] ?? pair[0]?.title}
-            </h3>
-          </div>
-          <div className="grid gap-5 md:grid-cols-2">
-            {pair.map((service) => (
-              <TreatmentBrochureItem key={service.slug} service={service} />
-            ))}
-
-            {pair.length === 1 ? <div className="hidden md:block" aria-hidden /> : null}
-          </div>
-        </FadeIn>
-      ))}
+    <section data-ani-section className="space-y-5 rounded-[1.6rem] bg-[#f3ecdf] p-4 shadow-[0_22px_44px_-36px_rgba(17,23,16,0.62)] sm:p-6">
+      <div className="space-y-1 text-center">
+        <p data-ani-copy className="text-[0.72rem] uppercase tracking-[0.16em] text-[#5f584d]">
+          Treatments
+        </p>
+        <h3 data-ani-heading className="text-[1.65rem] leading-[1.04] text-[#171c16] sm:text-[1.95rem]">
+          Browse The Full Treatment Menu
+        </h3>
+      </div>
+      <Masonry
+        fresh
+        columns={{ xs: 1, sm: 2, lg: 3 }}
+        gutter={{ xs: 12, sm: 14, md: 16, lg: 18 }}
+        items={items}
+      />
     </section>
   )
 }

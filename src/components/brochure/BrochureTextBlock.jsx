@@ -1,4 +1,4 @@
-import { FadeIn } from '../site/FadeIn'
+import { Masonry } from 'antd'
 
 function isHeading(block) {
   if (!block || block.length > 76 || block.includes('.') || block.includes(':')) {
@@ -13,7 +13,11 @@ function renderBulletList(lines, key) {
   return (
     <ul key={key} className="grid gap-2">
       {lines.map((line, index) => (
-        <li key={index} className="text-[0.9rem] leading-[1.62] text-[#4f4a41] before:mr-3 before:text-[#8f7658] before:content-['•']">
+        <li
+          key={index}
+          data-ani-copy
+          className="text-[0.9rem] leading-[1.62] text-[#4f4a41] before:mr-3 before:text-[#8f7658] before:content-['•']"
+        >
           {line.replace(/^•\s*/, '')}
         </li>
       ))}
@@ -34,14 +38,18 @@ function renderBlock(block, index) {
 
   if (lines.length === 1 && isHeading(lines[0])) {
     return (
-      <h3 key={index} className="text-[1.35rem] leading-[1.08] text-[#171c16] underline underline-offset-2 sm:text-[1.55rem]">
+      <h3
+        key={index}
+        data-ani-heading
+        className="text-[1.35rem] leading-[1.08] text-[#171c16] underline underline-offset-2 sm:text-[1.55rem]"
+      >
         {lines[0]}
       </h3>
     )
   }
 
   return (
-    <p key={index} className="whitespace-pre-line text-[0.9rem] leading-[1.65] text-[#4f4a41]">
+    <p key={index} data-ani-copy className="whitespace-pre-line text-[0.9rem] leading-[1.65] text-[#4f4a41]">
       {lines.join('\n')}
     </p>
   )
@@ -52,22 +60,33 @@ export function BrochureTextBlock({ title, content }) {
     .split(/\n\n+/)
     .map((item) => item.trim())
     .filter(Boolean)
+  const blockItems = blocks.map((block, index) => ({
+    key: `${title}-${index}`,
+    children: (
+      <article
+        data-float={index % 3 === 0 ? 'true' : undefined}
+        className="group relative overflow-hidden rounded-[1.15rem] bg-[#fcf8ef] px-4 py-4 shadow-[0_14px_30px_-28px_rgba(31,34,26,0.56)]"
+      >
+        {renderBlock(block, index)}
+      </article>
+    ),
+  }))
 
   return (
-    <FadeIn as="section" className="mx-auto w-full max-w-[1220px] px-3 sm:px-5 lg:px-0" duration={0.45}>
-      <div className="rounded-[1.6rem] border border-[#d9d0c3] bg-[#f8f5ef] p-5 sm:p-7">
-        <h2 className="text-[1.85rem] leading-[1.04] text-[#171c16] sm:text-[2.2rem]">{title}</h2>
-        <div className="mt-5 grid gap-3">
-          {blocks.map((block, index) => (
-            <FadeIn key={index} as="div" delay={0.04 + index * 0.04} duration={0.32}>
-              <div className="group relative overflow-hidden rounded-xl border border-[#d7ccbc] bg-[#fdfaf4] px-4 py-3 transition-all duration-200 hover:border-[#b39570]">
-                <span className="absolute inset-y-0 left-0 w-[3px] origin-bottom scale-y-0 bg-[#8f7658] transition-transform duration-200 group-hover:scale-y-100" />
-                {renderBlock(block, index)}
-              </div>
-            </FadeIn>
-          ))}
+    <section data-ani-section className="mx-auto w-full max-w-[1220px] space-y-5 px-3 sm:px-5 lg:px-0">
+      <div className="rounded-[1.6rem] bg-[#f4eee1] p-5 shadow-[0_22px_42px_-34px_rgba(22,26,19,0.56)] sm:p-7">
+        <h2 data-ani-heading className="text-[1.85rem] leading-[1.04] text-[#171c16] sm:text-[2.2rem]">
+          {title}
+        </h2>
+        <div className="mt-5">
+          <Masonry
+            fresh
+            columns={{ xs: 1, sm: 2, lg: 3 }}
+            gutter={{ xs: 12, sm: 14, md: 16, lg: 18 }}
+            items={blockItems}
+          />
         </div>
       </div>
-    </FadeIn>
+    </section>
   )
 }

@@ -15,7 +15,7 @@ import spa10 from '../../assets/spa/spa-10.jpg'
 import spa11 from '../../assets/spa/spa-11.jpg'
 import spa12 from '../../assets/spa/spa-12.jpg'
 import spa13 from '../../assets/spa/spa-13.jpg'
-import { TopNav } from '../navigation/TopNav'
+import { PageHero } from '../site/PageHero'
 
 const topServices = [
   { title: 'Deep Tissue Massage', image: spa07 },
@@ -120,72 +120,28 @@ const testimonials = [
 ]
 
 const imageCardClass =
-  'overflow-hidden rounded-[1.45rem] border border-[#ddd5ca]/70 bg-[#f8f5ef] shadow-[0_12px_30px_-22px_rgba(31,34,26,0.55)]'
+  'overflow-hidden rounded-[1.45rem] bg-[#f8f5ef] shadow-[0_12px_30px_-22px_rgba(31,34,26,0.55)]'
 
 export function HomeHeroSection() {
+  const hero = {
+    label: 'Luxury Wellness Studio',
+    title: 'Restore Body And Mind',
+    description:
+      'Personalized wellness rituals, therapeutic massage, and guided rejuvenation crafted to renew your total wellbeing journey.',
+    image: spa06,
+    primaryCta: {
+      to: '/bookings',
+      label: 'Book Appointment',
+    },
+    secondaryCta: {
+      to: '/treatments',
+      label: 'Explore Treatments',
+    },
+  }
+
   return (
-    <section
-      data-ani-section
-      className="relative h-[95vh]  overflow-hidden md:rounded-4xl border border-[#d6cdc1] bg-[#233125] text-[#f4efe6]"
-    >
-      <img
-        data-ani-image
-        data-ani-hero-image
-        src={spa06}
-        alt="Spa treatment"
-        className="absolute inset-0 h-full w-full object-cover object-center"
-      />
-
-      <TopNav />
-      <div className="relative z-10 flex h-full flex-col justify-between px-4 pb-4 pt-24 sm:px-6 sm:pb-6 sm:pt-28 lg:px-7 lg:pb-7 lg:pt-32">
-        {/* <div className="flex items-start justify-between gap-4">
-          <img data-ani-image src={brandWordmark} alt="Evenana" className="h-12 w-auto sm:h-16" />
-          <span
-            data-hero-badge
-            className="rounded-full border border-[#f7f1e6]/55 bg-[#f7f1e6]/10 px-3 py-1 text-[0.64rem] font-semibold uppercase tracking-[0.16em] text-[#f7f1e6]"
-          >
-            Luxury Wellness Studio
-          </span>
-        </div> */}
-
-        <div className="flex justify-between md:px-10 px-2 h-full items-end gap-6 pb-20 pt-8 md:grid-cols-[1.1fr_0.9fr] md:pt-0">
-          <div>
-            <h1 className="text-[clamp(3.25rem,8vw,7.5rem)] leading-[0.91] text-[#f5f1e8]">
-              <span data-hero-title-line className="block">
-                Restore Body
-              </span>
-              <span data-hero-title-line className="block font-serif italic">
-                And Mind
-              </span>
-            </h1>
-          </div>
-
-          <div className="pb-2 md:pb-8">
-            <p
-              data-hero-copy
-              className="max-w-[30rem] text-[0.9rem] leading-[1.6] text-[#eee7db]/92 sm:text-[1.35rem]"
-            >
-              Personalized wellness rituals, therapeutic massage, and guided
-              rejuvenation crafted to renew your total wellbeing journey.
-            </p>
-
-            <div className="mt-8 flex flex-wrap items-center gap-3">
-              <Link data-hero-cta to="/bookings">
-                <div className="rounded-full bg-[#f4efe6] px-7 py-3 text-[0.95rem] font-semibold uppercase tracking-[0.14em] text-[#172017]! transition hover:-translate-y-0.5 hover:bg-white">
-                  Book Appointment
-                </div>
-              </Link>
-              <Link data-hero-cta to="/treatments">
-                <div className="rounded-full border border-[#f4eee2]/50 px-7 py-3 text-[0.95rem] font-semibold uppercase tracking-[0.14em] text-[#f0e8dc]! transition hover:bg-[#f4eee2]/10">
-                  Explore Treatments
-                </div>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+    <PageHero hero={hero} />
+  )
 }
 
 export function HomeAboutSection() {
@@ -690,7 +646,7 @@ export function HomeBenefitsSection() {
           >
             Calm Your Senses With <span className="font-serif italic">Therapeutic Healing</span>
           </h3>
-          <div className="mt-5 divide-y divide-[#d5cab9] rounded-[1rem] border border-[#d5cab9] bg-[#fcfaf6]">
+          <div className="mt-5 divide-y divide-[#d5cab9] rounded-[1rem] bg-[#fcfaf6]">
             {calmList.map((item, index) => (
               <div key={item} className="flex items-center justify-between px-4 py-[clamp(0.8rem,1.2vw,1rem)]">
                 <p data-ani-copy className="text-[clamp(0.9rem,0.94vw,1.01rem)] leading-[1.54] text-[#2f332c]">
