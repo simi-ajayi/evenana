@@ -697,16 +697,16 @@ export function HomeBenefitsSection() {
 
   return (
     <section data-ani-section className="min-h-full py-8 lg:py-12">
-      <div className="mx-auto w-full max-w-[1440px]">
-      <Masonry
-        fresh
-        columns={{ xs: 2, sm: 2, lg: 3 }}
-        gutter={{ xs: 12, sm: 14, md: 16, lg: 18 }}
-        items={benefitItems}
+      <div className="mx-auto w-full px-4 max-w-[1440px] py-20">
+        <Masonry
+          fresh
+          columns={{ xs: 2, sm: 2, lg: 3 }}
+          gutter={{ xs: 12, sm: 14, md: 16, lg: 18 }}
+          items={benefitItems}
         />
-        </div>
+      </div>
     </section>
-  )
+  );
 }
 
 export function HomeTestimonialsSection() {
