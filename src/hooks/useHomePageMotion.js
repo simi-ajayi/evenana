@@ -113,6 +113,10 @@ export function useHomePageMotion(pageRef, options = {}) {
           return
         }
 
+        if (image instanceof Element && image.matches('[data-ani-hero-image]')) {
+          return
+        }
+
         gsap.fromTo(
           image,
           {
@@ -139,19 +143,6 @@ export function useHomePageMotion(pageRef, options = {}) {
             },
           },
         )
-
-        gsap.to(image, {
-          yPercent: index % 3 === 0 ? -8 : 8,
-          xPercent: index % 4 === 0 ? -1.8 : 1.8,
-          rotate: index % 2 ? -1.25 : 1.25,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: image,
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: 1.35,
-          },
-        })
       })
 
       gsap.utils.toArray('[data-float]').forEach((card, index) => {
@@ -159,14 +150,18 @@ export function useHomePageMotion(pageRef, options = {}) {
           return
         }
 
-        gsap.to(card, {
-          y: index % 2 ? -13 : 13,
-          x: index % 3 ? 8 : -8,
-          rotate: index % 2 ? -1.8 : 1.8,
-          duration: 2.6 + (index % 4) * 0.45,
-          ease: 'sine.inOut',
-          yoyo: true,
-          repeat: -1,
+        gsap.from(card, {
+          opacity: 0,
+          y: index % 2 ? 26 : 22,
+          x: index % 3 ? 4 : -4,
+          rotate: index % 2 ? -2 : 2,
+          duration: 0.75,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 88%',
+            toggleActions: 'play none none reverse',
+          },
         })
       })
     }, pageRef)
