@@ -187,7 +187,7 @@ export function HomePage() {
       <main className="md:mx-auto mx-0 w-full ">
         <div className=" sm:px-5 sm:py-5 lg:px-8 lg:py-7 ">
           <HomeHeroSection />
-        </div>{" "}
+        </div>
         <HomeAboutSection />
         <HomeTopServicesSection />
         <HomeMetricsSection />
