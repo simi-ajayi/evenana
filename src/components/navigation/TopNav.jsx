@@ -2,7 +2,8 @@ import { useEffect, useMemo, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import logo from '../../assets/clearlogo.png'
 import { navRoutes } from '../../data/site/navRoutes'
-import brandWordmark from "../../assets/evenana_white_text.png";
+import brandWordmark from '../../assets/evenana_white_text.png'
+import { CartBadge } from '../cart/CartBadge'
 
 
 const navTextClass = 'font-body text-md uppercase tracking-[0.14em]'
@@ -88,7 +89,7 @@ export function TopNav({ tone = 'hero' }) {
               loading="eager"
               decoding="async"
               fetchPriority="high"
-              className="h-40 w-auto ml-30  mt-6  absolute"
+              className="h-40 w-[50%] md:w-auto ml-30 mt-6 absolute"
             />
           </NavLink>
 
@@ -104,6 +105,21 @@ export function TopNav({ tone = 'hero' }) {
           </div>
 
           <div className="flex items-center gap-2">
+            <NavLink
+              to="/cart"
+              className={[
+                "relative hidden h-10 w-10 items-center justify-center rounded-full border transition-colors md:inline-flex",
+                isHeroTone
+                  ? "border-[#f8f3fc]/60 text-[#f8f3fc] hover:bg-[#f8f3fc]/14"
+                  : "border-[#6e4d87]/30 text-[#6e4d87] hover:bg-[#6e4d87]/10",
+              ].join(" ")}
+              onClick={() => setIsMenuOpen(false)}
+              aria-label="Open cart"
+            >
+              <CartIcon />
+              <CartBadge />
+            </NavLink>
+
             <NavLink
               to="/bookings"
               className={[
@@ -145,6 +161,21 @@ export function TopNav({ tone = 'hero' }) {
                 ].join(" ")}
               />
             </button>
+
+            <NavLink
+              to="/cart"
+              className={[
+                "relative flex h-10 w-10 items-center justify-center rounded-full border transition-colors md:hidden",
+                isHeroTone
+                  ? "border-[#f8f3fc]/60 text-[#f8f3fc] hover:bg-[#f8f3fc]/14"
+                  : "border-[#6e4d87]/30 text-[#6e4d87] hover:bg-[#6e4d87]/10",
+              ].join(" ")}
+              onClick={() => setIsMenuOpen(false)}
+              aria-label="Open cart"
+            >
+              <CartIcon />
+              <CartBadge />
+            </NavLink>
           </div>
         </div>
 
@@ -169,6 +200,13 @@ export function TopNav({ tone = 'hero' }) {
               />
             ))}
             <NavLink
+              to="/cart"
+              className="inline-flex w-full items-center justify-center rounded-full border border-[#6e4d87] bg-transparent px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-[#6e4d87]! transition hover:bg-[#6e4d87]/10"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              View Cart
+            </NavLink>
+            <NavLink
               to="/bookings"
               className="mt-1 inline-flex w-full items-center justify-center rounded-full border border-[#6e4d87] bg-[#6e4d87] px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-[#f8f3fc]! transition hover:bg-[#5c3f73]"
               onClick={() => setIsMenuOpen(false)}
@@ -180,4 +218,23 @@ export function TopNav({ tone = 'hero' }) {
       </div>
     </header>
   );
+}
+
+function CartIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.5}
+      className="h-5 w-5"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+      />
+    </svg>
+  )
 }

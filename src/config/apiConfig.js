@@ -1,4 +1,6 @@
-const apiBaseUrl = import.meta.env.VITE_API_BASE_URL ?? 'https://api.evenana.local'
+const fallbackApiBaseUrl = 'http://62.169.22.53:4000/api/v1/'
+const rawApiBaseUrl = import.meta.env.VITE_API_BASE_URL ?? fallbackApiBaseUrl
+const apiBaseUrl = rawApiBaseUrl.replace(/\/+$/, '')
 const useMockContent = import.meta.env.VITE_USE_MOCK_CONTENT !== 'false'
 
 export const apiConfig = {

@@ -5,23 +5,28 @@ export const navRoutes = [
     key: 'treatments',
   },
   {
-    path: '/day-spa',
-    label: 'Day Spa',
-    key: 'daySpa',
+    path: '/products',
+    label: 'Products',
+    key: 'products',
   },
+  // {
+  //   path: '/day-spa',
+  //   label: 'Day Spa',
+  //   key: 'daySpa',
+  // },
+  // {
+  //   path: '/wellbeing-spaces',
+  //   label: 'Wellbeing Spaces',
+  //   key: 'wellbeingSpaces',
+  // },
+  // {
+  //   path: '/membership',
+  //   label: 'Membership',
+  //   key: 'membership',
+  // },
   {
-    path: '/wellbeing-spaces',
-    label: 'Wellbeing Spaces',
-    key: 'wellbeingSpaces',
-  },
-  {
-    path: '/membership',
-    label: 'Membership',
-    key: 'membership',
-  },
-  {
-    path: '/gifting',
-    label: 'Gifting',
-    key: 'gifting',
+    path: '/gift-cards',
+    label: 'Gift Cards',
+    key: 'giftCards',
   },
 ]

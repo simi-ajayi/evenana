@@ -1,5 +1,5 @@
-import { ExperiencePage } from './ExperiencePage'
+import { GiftCardsPage } from './GiftCardsPage'
 
 export function GiftingPage() {
-  return <ExperiencePage pageKey="gifting" />
+  return <GiftCardsPage />
 }

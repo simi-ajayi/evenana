@@ -35,6 +35,11 @@ a {
   --app-primary-contrast: #f8f3fc;
   --app-secondary: #9a80b0;
   --app-accent: #7c5f96;
+  --background: #ffffff;
+  --foreground: #0B1F3A;
+  --accent: #0B1F3A;
+  --accent-hover: #1e3a5f;
+  --border: #e5e7eb;
 }
 
 :root.dark {

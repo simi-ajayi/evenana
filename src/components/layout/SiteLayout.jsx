@@ -5,6 +5,13 @@ import { FadeIn } from '../site/FadeIn'
 
 export function SiteLayout() {
   const location = useLocation()
+  const isLandingCommerceRoute =
+    location.pathname === '/bookings' ||
+    location.pathname === '/appointments' ||
+    location.pathname === '/products' ||
+    location.pathname === '/cart' ||
+    location.pathname === '/gift-cards' ||
+    location.pathname === '/payment/callback'
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -25,20 +32,26 @@ export function SiteLayout() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-[#f2edf7] text-[#1f1827] transition-colors">
-      <FadeIn
-        as="main"
-        key={location.pathname}
-        className="mx-auto w-full"
-        duration={0.42}
-        delay={0.03}
-        scaleFrom={1}
-        triggerOnScroll={false}
-        fade={false}
-      >
-        <Outlet />
-      </FadeIn>
-      <SiteFooter />
+    <div className={isLandingCommerceRoute ? 'min-h-screen bg-white text-gray-900' : 'min-h-screen bg-[#f2edf7] text-[#1f1827] transition-colors'}>
+      {isLandingCommerceRoute ? (
+        <main className="mx-auto w-full">
+          <Outlet />
+        </main>
+      ) : (
+        <FadeIn
+          as="main"
+          key={location.pathname}
+          className="mx-auto w-full"
+          duration={0.42}
+          delay={0.03}
+          scaleFrom={1}
+          triggerOnScroll={false}
+          fade={false}
+        >
+          <Outlet />
+        </FadeIn>
+      )}
+      {isLandingCommerceRoute ? null : <SiteFooter />}
     </div>
   )
 }
